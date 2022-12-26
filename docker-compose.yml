@@ -1,0 +1,56 @@
+version: "3.7"
+services:
+    ecomerce:
+        build:
+            args:
+                user: app
+                uid: 1000
+            context: ./
+            dockerfile: ecomerceDockerfile
+        image: ecomerce-php
+        container_name: ecomerce-php
+        restart: unless-stopped
+        working_dir: /var/www/
+        volumes:
+            - ./:/var/www
+        networks:
+            ecomerce-net:
+                ipv4_address: 172.28.5.2
+    mysql:
+        image: mysql:8.0
+        container_name: ecomerce-mysql
+        restart: unless-stopped
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_DATABASE: ecomerce_db
+            MYSQL_ROOT_PASSWORD: 123abc456
+            MYSQL_PASSWORD: 123456
+            MYSQL_USER: ecomerce_us
+        volumes:
+            - ./.storage/mysql:/var/lib/mysql
+        ports:
+            - 3307:3307
+        expose:
+            - 3307
+        networks:
+            ecomerce-net:
+                ipv4_address: 172.28.5.3
+    nginx:
+        image: nginx:alpine
+        container_name: ecomerce-nginx
+        restart: unless-stopped
+        ports:
+            - 80:80
+        volumes:
+            - ./:/var/www
+            - ./.docker/nginx/:/etc/nginx/conf.d/
+        networks:
+            ecomerce-net:
+                ipv4_address: 172.28.5.5
+networks:
+    ecomerce-net:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.5.0/24
