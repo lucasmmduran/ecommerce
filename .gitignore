@@ -7,3 +7,5 @@ bower_components/
 node_modules/
 /ecommerce/.htaccess
 /ecommerce/tests
+/ecommerce/var/logs
+/ecommerce/var/cache
