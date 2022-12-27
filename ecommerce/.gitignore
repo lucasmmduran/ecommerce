@@ -137,9 +137,6 @@ themes/classic
 
 bower_components/
 node_modules/
-composer.phar
-php-cs-fixer
-.grunt/*
 
 
 
