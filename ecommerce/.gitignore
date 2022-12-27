@@ -6,10 +6,6 @@
 
 modules/*
 
-themes/*/
-themes/classic
-!themes/_core
-
 
 
 
