@@ -3,3 +3,6 @@
 /ecommerce/cache/smarty/cache
 /ecommerce/cache/smarty/compile
 /ecommerce/vendor
+bower_components/
+node_modules/
+/ecommerce/.htaccess
