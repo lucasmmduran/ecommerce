@@ -141,19 +141,7 @@ composer.phar
 php-cs-fixer
 .grunt/*
 
-# Translations and emails templates
 
-translations/*
-!translations/default
-mails/*
-!mails/themes/
-!mails/_partials/
-themes/default-bootstrap/lang/*
-themes/default-bootstrap/modules/*/translations/*.php
-themes/default-bootstrap/mails/*
-!themes/default-bootstrap/mails/en/
-themes/default-bootstrap/modules/*/mails/*
-!themes/default-bootstrap/modules/*/mails/en
 
 
 # Symfony
