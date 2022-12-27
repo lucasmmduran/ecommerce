@@ -2,28 +2,9 @@
 
 /.htaccess
 /.htpasswd
-*.log
-npm-debug.log.*
-.sass-cache/
+
 *.swp
 *.swo
-.cache/
-
-# Cache
-/cache/*
-!/cache/.htaccess
-!/cache/cachefs/index.php
-!/cache/deprecated.txt
-!/cache/index.php
-!/cache/purifier/index.php
-!/cache/push/activity
-!/cache/push/index.php
-!/cache/push/trends
-!/cache/sandbox/index.php
-!/cache/smarty/cache/index.php
-!/cache/smarty/compile/index.php
-!/cache/smarty/index.php
-!/cache/tcpdf/index.php
 
 # Download
 /download/*
@@ -174,10 +155,6 @@ themes/default-bootstrap/mails/*
 themes/default-bootstrap/modules/*/mails/*
 !themes/default-bootstrap/modules/*/mails/en
 
-# MISC
-
-*sitemap.xml
-/robots.txt
 
 # Symfony
 
@@ -202,13 +179,4 @@ themes/default-bootstrap/modules/*/mails/*
 !/var/modules
 /var/modules/*
 !/var/modules/.gitkeep
-/vendor/
 /web/bundles/
-
-# Release creation
-tools/build/releases/*
-!tools/build/releases/.gitkeep
-
-# Docker configuration
-install.lock
-docker-compose.override.yml

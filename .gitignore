@@ -1,2 +1,5 @@
 /.storage
 .DS_Store
+/ecommerce/cache/smarty/cache
+/ecommerce/cache/smarty/compile
+/ecommerce/vendor
