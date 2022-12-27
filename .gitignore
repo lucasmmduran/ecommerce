@@ -9,3 +9,7 @@ node_modules/
 /ecommerce/tests
 /ecommerce/var/logs
 /ecommerce/var/cache
+/ecommerce/tools/smarty/cache
+/ecommerce/tools/smarty/compile
+/ecommerce/tools/smarty_v2/cache
+/ecommerce/tools/smarty_v2/compile
