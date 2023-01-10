@@ -340,7 +340,7 @@ abstract class ModuleCore implements ModuleInterface
                     $this->id = static::$modules_cache[$this->name]['id_module'];
                 }
                 foreach (static::$modules_cache[$this->name] as $key => $value) {
-                    if (array_key_exists($key, $this)) {
+                    if (isset($this->$key)) {
                         $this->{$key} = $value;
                     }
                 }
