@@ -299,9 +299,9 @@ class ImageRetriever
         $type = 'products';
         $imageTypes = ImageType::getImagesTypes($type, true);
 
-        if (empty($imageTypes)) {
+        /* if (empty($imageTypes)) {
             throw new PrestaShopException(sprintf('There is no image type defined for "%s".', $type));
-        }
+        } */
 
         foreach ($imageTypes as $imageType) {
             $url = $this->link->getImageLink(
