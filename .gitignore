@@ -5,9 +5,6 @@ node_modules/
 /ecommerce/cache
 /ecommerce/vendor
 /ecommerce/composer.lock
-/ecommerce/admin-dev/themes/default
-/ecommerce/admin-dev/themes/new-theme
-/ecommerce/config/themes
 /ecommerce/modules
 /ecommerce/override
 /ecommerce/themes
