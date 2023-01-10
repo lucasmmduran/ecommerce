@@ -5,11 +5,6 @@ node_modules/
 /ecommerce/cache
 /ecommerce/vendor
 /ecommerce/composer.lock
-/ecommerce/tests-legacy
-/ecommerce/admin-dev/autoupgrade
-/ecommerce/admin-dev/backups
-/ecommerce/admin-dev/export
-/ecommerce/admin-dev/import
 /ecommerce/admin-dev/themes/default
 /ecommerce/admin-dev/themes/new-theme
 /ecommerce/config/themes
