@@ -5,9 +5,6 @@ node_modules/
 /ecommerce/cache
 /ecommerce/vendor
 /ecommerce/composer.lock
-/ecommerce/modules
-/ecommerce/override
-/ecommerce/themes
 /ecommerce/var/cache
 /ecommerce/var/logs
 /ecommerce/var/sessions
