@@ -9,3 +9,4 @@ node_modules/
 /ecommerce/var/logs
 /ecommerce/var/sessions
 /ecommerce/app/config/parameters.php
+/ecommerce/install
