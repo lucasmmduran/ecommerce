@@ -18,7 +18,7 @@
  *}
 <div
   class="wishlist-rename"
-  data-url="{$url}"
+  data-url="{$url|escape:'html':'UTF-8'}"
   data-title="{l s='Rename wishlist' d='Modules.Blockwishlist.Shop'}"
   data-label="{l s='Wishlist name' d='Modules.Blockwishlist.Shop'}"
   data-placeholder="{l s='Wishlist name' d='Modules.Blockwishlist.Shop'}"

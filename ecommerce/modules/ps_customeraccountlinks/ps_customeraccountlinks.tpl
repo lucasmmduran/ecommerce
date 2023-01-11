@@ -24,10 +24,10 @@
  *}
 
 <div id="block_myaccount_infos">
-	<h4><a href="{$urls.pages.my_account}" title="{l s='Your account' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Your account' d='Shop.Theme.Customeraccount'}</a></h4>
+	<h4><a href="{$urls.pages.my_account|escape:'html':'UTF-8'}" title="{l s='Your account' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Your account' d='Shop.Theme.Customeraccount'}</a></h4>
 	<ul>
     {foreach from=$my_account_urls item=my_account_url}
-        <li><a href="{$my_account_url.url}" title="{$my_account_url.title}" rel="nofollow">{$my_account_url.title}</a></li>
+        <li><a href="{$my_account_url.url|escape:'html':'UTF-8'}" title="{$my_account_url.title|escape:'html':'UTF-8'}" rel="nofollow">{$my_account_url.title|escape:'html':'UTF-8'}</a></li>
     {/foreach}
     {hook h="displayMyAccountBlock"}
 	</ul>

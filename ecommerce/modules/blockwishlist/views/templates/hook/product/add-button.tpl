@@ -18,10 +18,10 @@
  *}
 <div
   class="wishlist-button"
-  data-url="{$url}"
-  data-product-id="{$product.id}"
-  data-product-attribute-id="{$product.id_product_attribute}"
-  data-is-logged="{$customer.is_logged}"
+  data-url="{$url|escape:'html':'UTF-8'}"
+  data-product-id="{$product.id|escape:'html':'UTF-8'}"
+  data-product-attribute-id="{$product.id_product_attribute|escape:'html':'UTF-8'}"
+  data-is-logged="{$customer.is_logged|escape:'html':'UTF-8'}"
   data-list-id="1"
   data-checked="true"
   data-is-product="true"

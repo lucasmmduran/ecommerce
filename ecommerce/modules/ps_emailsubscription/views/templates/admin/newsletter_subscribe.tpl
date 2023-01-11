@@ -28,7 +28,7 @@
       <label class="control-label col-lg-3{if isset($input.required) && $input.required} required{/if}">
           <span class="label-tooltip" data-toggle="tooltip" data-html="true" title="{if isset($input.hint)}{$input.hint|escape:'html':'UTF-8'}{/if}">
             {if isset($input.label)}
-              {$input.label}
+              {$input.label|escape:'html':'UTF-8'}
             {/if}
           </span>
       </label>
@@ -38,11 +38,11 @@
         {block name="input"}
           <span class="switch prestashop-switch fixed-width-lg">
             {foreach $input.values as $value}
-              <input type="radio" name="{$input.name}"{if $value.value == 1} id="{$input.name}_on" {else} id="{$input.name}_off"{/if} value="{$value.value}"
+              <input type="radio" name="{$input.name|escape:'html':'UTF-8'}"{if $value.value == 1} id="{$input.name|escape:'html':'UTF-8'}_on" {else} id="{$input.name|escape:'html':'UTF-8'}_off"{/if} value="{$value.value|escape:'html':'UTF-8'}"
                 {if $input.value == $value.value} checked="checked"{/if}
               >
               {strip}
-                <label {if $value.value == 1} for="{$input.name}_on"{else} for="{$input.name}_off"{/if}>
+                <label {if $value.value == 1} for="{$input.name|escape:'html':'UTF-8'}_on"{else} for="{$input.name|escape:'html':'UTF-8'}_off"{/if}>
                   {if $value.value == 1}
                     {l s='Yes' d='Admin.Global'}
                   {else}

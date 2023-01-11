@@ -19,7 +19,7 @@
 
 <div
   class="wishlist-share"
-  data-url="{$url}"
+  data-url="{$url|escape:'html':'UTF-8'}"
   data-title="{l s='Share wishlist' d='Modules.Blockwishlist.Shop'}"
   data-copied-text="{l s='Copied!' d='Modules.Blockwishlist.Shop'}"
   data-label="{l s='Share link' d='Modules.Blockwishlist.Shop'}"

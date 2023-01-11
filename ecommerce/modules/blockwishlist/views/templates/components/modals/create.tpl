@@ -19,7 +19,7 @@
 
 <div
   class="wishlist-create"
-  data-url="{$url}"
+  data-url="{$url|escape:'html':'UTF-8'}"
   data-title="{l s='Create wishlist' d='Modules.Blockwishlist.Shop'}"
   data-label="{l s='Wishlist name' d='Modules.Blockwishlist.Shop'}"
   data-placeholder="{l s='Add name' d='Modules.Blockwishlist.Shop'}"
