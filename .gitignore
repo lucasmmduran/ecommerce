@@ -10,3 +10,4 @@ node_modules/
 /ecommerce/var/sessions
 /ecommerce/app/config/parameters.php
 /ecommerce/install
+/ecommerce/.htaccess
