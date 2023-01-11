@@ -239,8 +239,20 @@ class RequestSqlCore extends ObjectModel
             if (in_array($attr['expr_type'], ['operator', 'const'])) {
                 continue;
             }
-            if ($attribut = $this->cutAttribute($attr['base_expr'], $from)) {
-                $tab[] = $attribut;
+
+            if (!empty($attr['sub_tree'])) {
+                foreach ($attr['sub_tree'] as $treeItem) {
+                    if ($treeItem['expr_type'] !== 'colref') {
+                        continue;
+                    }
+                    if ($attribut = $this->cutAttribute($treeItem['base_expr'], $from)) {
+                        $tab[] = $attribut;
+                    }
+                }
+            } else {
+                if ($attribut = $this->cutAttribute($attr['base_expr'], $from)) {
+                    $tab[] = $attribut;
+                }
             }
         }
 
@@ -452,7 +464,7 @@ class RequestSqlCore extends ObjectModel
         $nb = count($select);
         for ($i = 0; $i < $nb; ++$i) {
             $attribut = $select[$i];
-            if ($attribut['base_expr'] != '*' && !preg_match('/\.*$/', $attribut['base_expr'])) {
+            if ($attribut['base_expr'] != '*' && !preg_match('/\.\*$/', $attribut['base_expr'])) {
                 if ($attribut['expr_type'] == 'colref') {
                     if ($attr = $this->cutAttribute(trim($attribut['base_expr']), $from)) {
                         if (!$this->attributExistInTable($attr['attribut'], $attr['table'])) {
@@ -496,7 +508,7 @@ class RequestSqlCore extends ObjectModel
         $nb = count($where);
         for ($i = 0; $i < $nb; ++$i) {
             $attribut = $where[$i];
-            if ($attribut['expr_type'] == 'colref' || $attribut['expr_type'] == 'reserved') {
+            if ($attribut['expr_type'] == 'colref') {
                 if ($attr = $this->cutAttribute(trim($attribut['base_expr']), $from)) {
                     if (!$this->attributExistInTable($attr['attribut'], $attr['table'])) {
                         $this->error_sql['checkedWhere']['attribut'] = [$attr['attribut'], implode(', ', $attr['table'])];
@@ -504,15 +516,15 @@ class RequestSqlCore extends ObjectModel
                         return false;
                     }
                 } else {
-                    if (isset($this->error_sql['returnNameTable'])) {
-                        $this->error_sql['checkedWhere'] = $this->error_sql['returnNameTable'];
+                    $this->error_sql['checkedWhere'] = $this->error_sql['returnNameTable'] ?? false;
 
-                        return false;
-                    } else {
-                        $this->error_sql['checkedWhere'] = false;
+                    return false;
+                }
+            } elseif ($attribut['expr_type'] == 'reserved') {
+                if ($attribut['base_expr'] !== 'EXISTS' || !isset($where[$i + 1]) || $where[$i + 1]['expr_type'] !== 'subquery') {
+                    $this->error_sql['checkedWhere'] = $this->error_sql['returnNameTable'] ?? false;
 
-                        return false;
-                    }
+                    return false;
                 }
             } elseif ($attribut['expr_type'] == 'operator') {
                 if (!in_array(strtoupper($attribut['base_expr']), $this->tested['operator'])) {

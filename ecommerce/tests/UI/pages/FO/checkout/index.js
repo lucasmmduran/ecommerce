@@ -1,7 +1,16 @@
 require('module-alias/register');
 const FOBasePage = require('@pages/FO/FObasePage');
 
+/**
+ * Checkout page, contains functions that can be used on the page
+ * @class
+ * @extends FOBasePage
+ */
 class Checkout extends FOBasePage {
+  /**
+   * @constructs
+   * Setting up texts and selectors to use on checkout page
+   */
   constructor() {
     super();
 
@@ -16,9 +25,11 @@ class Checkout extends FOBasePage {
     this.termsOfServiceModalDiv = '#modal div.js-modal-content';
     this.paymentConfirmationButton = `${this.paymentStepSection} #payment-confirmation button:not([disabled])`;
     this.shippingValueSpan = '#cart-subtotal-shipping span.value';
+
     // Personal information form
     this.personalInformationStepForm = '#checkout-personal-information-step';
-    this.createAccountOptionalNotice = `${this.personalInformationStepForm} #customer-form section p`;
+    this.createAccountOptionalNotice = `${this.personalInformationStepForm} `
+      + '#customer-form .form-informations .form-informations-title';
     this.signInLink = `${this.personalInformationStepForm} a[href="#checkout-login-form"]`;
     this.checkoutGuestForm = '#checkout-guest-form';
     this.checkoutGuestGenderInput = pos => `${this.checkoutGuestForm} input[name='id_gender'][value='${pos}']`;
@@ -32,11 +43,13 @@ class Checkout extends FOBasePage {
     this.checkoutGuestNewsletterCheckbox = `${this.checkoutGuestForm} input[name='newsletter']`;
     this.checkoutGuestGdprCheckbox = `${this.checkoutGuestForm} input[name='psgdpr']`;
     this.checkoutGuestContinueButton = `${this.checkoutGuestForm} button[name='continue']`;
+
     // Checkout login form
     this.checkoutLoginForm = `${this.personalInformationStepForm} #checkout-login-form`;
     this.emailInput = `${this.checkoutLoginForm} input[name='email']`;
     this.passwordInput = `${this.checkoutLoginForm} input[name='password']`;
     this.personalInformationContinueButton = `${this.checkoutLoginForm} #login-form footer button`;
+
     // Checkout address form
     this.addressStepSection = '#checkout-addresses-step';
     this.addressStepCompanyInput = `${this.addressStepSection} input[name='company']`;
@@ -44,7 +57,9 @@ class Checkout extends FOBasePage {
     this.addressStepPostCodeInput = `${this.addressStepSection} input[name='postcode']`;
     this.addressStepCityInput = `${this.addressStepSection} input[name='city']`;
     this.addressStepPhoneInput = `${this.addressStepSection} input[name='phone']`;
+    this.addressStepUseSameAddressCheckbox = '#use_same_address';
     this.addressStepContinueButton = `${this.addressStepSection} button[name='confirm-addresses']`;
+
     // Shipping method step
     this.deliveryStepSection = '#checkout-delivery-step';
     this.deliveryOptionsRadios = 'input[id*=\'delivery_option_\']';
@@ -54,6 +69,7 @@ class Checkout extends FOBasePage {
     this.deliveryOptionAllPricesSpan = '#js-delivery .delivery-option span.carrier-price';
     this.deliveryMessage = '#delivery_message';
     this.deliveryStepContinueButton = `${this.deliveryStepSection} button[name='confirmDeliveryOption']`;
+
     // Gift selectors
     this.giftCheckbox = '#input_gift';
     this.recycableGiftCheckbox = '#input_recyclable';
@@ -67,7 +83,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Check if we are in checkout Page
-   * @param page
+   * @param page {Page} Browser tab
    * @return {Promise<boolean>}
    */
   async isCheckoutPage(page) {
@@ -76,9 +92,8 @@ class Checkout extends FOBasePage {
 
   /**
    * Check if step is complete
-   * @param page
-   * @param stepSelector, step to check is complete
-   * @param stepSelector
+   * @param page {Page} Browser tab
+   * @param stepSelector {string} String of the step to check
    * @returns {Promise<boolean>}
    */
   async isStepCompleted(page, stepSelector) {
@@ -87,7 +102,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Go to Delivery Step and check that Address step is complete
-   * @param page
+   * @param page {Page} Browser tab
    * @return {Promise<boolean>}
    */
   async goToDeliveryStep(page) {
@@ -97,9 +112,9 @@ class Checkout extends FOBasePage {
 
   /**
    * Choose shipping method and add a comment
-   * @param page
-   * @param shippingMethod
-   * @param comment
+   * @param page {Page} Browser tab
+   * @param shippingMethod {number} Position of the shipping method
+   * @param comment {string} Comment to add after selecting a shipping method
    * @returns {Promise<boolean>}
    */
   async chooseShippingMethodAndAddComment(page, shippingMethod, comment = '') {
@@ -110,8 +125,8 @@ class Checkout extends FOBasePage {
 
   /**
    * Is shipping method exist
-   * @param page
-   * @param shippingMethod
+   * @param page {Page} Browser tab
+   * @param shippingMethod {number} Position of the shipping method
    * @returns {Promise<boolean>}
    */
   isShippingMethodVisible(page, shippingMethod) {
@@ -120,7 +135,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Get selected shipping method name
-   * @param page
+   * @param page {Page} Browser tab
    * @return {Promise<string>}
    */
   async getSelectedShippingMethod(page) {
@@ -145,7 +160,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Get all carriers prices
-   * @param page
+   * @param page {Page} Browser tab
    * @returns {Promise<[]>}
    */
   async getAllCarriersPrices(page) {
@@ -154,7 +169,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Get shipping value
-   * @param page
+   * @param page {Page} Browser tab
    * @returns {Promise<string>}
    */
   getShippingCost(page) {
@@ -163,7 +178,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Get all carriers names
-   * @param page
+   * @param page {Page} Browser tab
    * @returns {Promise<[]>}
    */
   async getAllCarriersNames(page) {
@@ -172,7 +187,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Go to Payment Step and check that delivery step is complete
-   * @param page
+   * @param page {Page} Browser tab
    * @return {Promise<boolean>}
    */
   async goToPaymentStep(page) {
@@ -182,8 +197,8 @@ class Checkout extends FOBasePage {
 
   /**
    * Choose payment method and validate Order
-   * @param page
-   * @param paymentModuleName, payment method chosen (ex : ps_wirepayment)
+   * @param page {Page} Browser tab
+   * @param paymentModuleName {string} The chosen payment method
    * @return {Promise<void>}
    */
   async choosePaymentAndOrder(page, paymentModuleName) {
@@ -197,8 +212,8 @@ class Checkout extends FOBasePage {
 
   /**
    * Check payment method existence
-   * @param page
-   * @param paymentModuleName
+   * @param page {Page} Browser tab
+   * @param paymentModuleName {string} The payment module name
    * @returns {Promise<boolean>}
    */
   isPaymentMethodExist(page, paymentModuleName) {
@@ -207,17 +222,17 @@ class Checkout extends FOBasePage {
 
   /**
    * Click on sign in
-   * @param page
+   * @param page {Page} Browser tab
    * @return {Promise<void>}
    */
   async clickOnSignIn(page) {
-    page.click(this.signInLink);
+    await page.click(this.signInLink);
   }
 
   /**
    * Login in FO
-   * @param page
-   * @param customer
+   * @param page {Page} Browser tab
+   * @param customer {object} Customer's information (email and password)
    * @return {Promise<boolean>}
    */
   async customerLogin(page, customer) {
@@ -230,7 +245,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Is create account notice visible
-   * @param page
+   * @param page {Page} Browser tab
    * @returns {boolean}
    */
   isCreateAnAccountNoticeVisible(page) {
@@ -239,7 +254,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Is password input required
-   * @param page
+   * @param page {Page} Browser tab
    * @returns {boolean}
    */
   isPasswordRequired(page) {
@@ -248,7 +263,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Check if checkbox of condition to approve is visible
-   * @param page
+   * @param page {Page} Browser tab
    * @returns {boolean}
    */
   isConditionToApproveCheckboxVisible(page) {
@@ -257,7 +272,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Get terms of service page title
-   * @param page
+   * @param page {Page} Browser tab
    * @returns {Promise<text>}
    */
   async getTermsOfServicePageTitle(page) {
@@ -267,7 +282,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Check if gift checkbox is visible
-   * @param page
+   * @param page {Page} Browser tab
    * @return {boolean}
    */
   isGiftCheckboxVisible(page) {
@@ -276,7 +291,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Check if recyclable checkbox is visible
-   * @param page
+   * @param page {Page} Browser tab
    * @return {boolean}
    */
   isRecyclableCheckboxVisible(page) {
@@ -285,7 +300,7 @@ class Checkout extends FOBasePage {
 
   /**
    * Get gift price from cart summary
-   * @param page
+   * @param page {Page} Browser tab
    * @return {Promise<string>}
    */
   async getGiftPrice(page) {
@@ -294,26 +309,48 @@ class Checkout extends FOBasePage {
   }
 
   /**
-   * Set address
-   * @param page
-   * @param address
-   * @returns {Promise<boolean>}
+   * Fill address form, used for delivery and invoice addresses
+   * @param page {Page} Browser tab
+   * @param address {object} Address's information to fill form with
+   * @returns {Promise<void>}
    */
-  async setAddress(page, address) {
+  async fillAddressForm(page, address) {
     await this.setValue(page, this.addressStepCompanyInput, address.company);
     await this.setValue(page, this.addressStepAddress1Input, address.address);
     await this.setValue(page, this.addressStepPostCodeInput, address.postalCode);
     await this.setValue(page, this.addressStepCityInput, address.city);
     await page.type(this.addressStepPhoneInput, address.phone, {delay: 50});
     await this.setValue(page, this.addressStepPhoneInput, address.phone);
+  }
+
+  /**
+   * Set address step
+   * @param page {Page} Browser tab
+   * @param deliveryAddress {object} Address's information to add (for delivery)
+   * @param invoiceAddress {object} Address's information to add (for invoice
+   * @returns {Promise<boolean>}
+   */
+  async setAddress(page, deliveryAddress, invoiceAddress = null) {
+    // Set delivery address
+    await this.fillAddressForm(page, deliveryAddress);
+
+    // Set invoice address if not null
+    if (invoiceAddress !== null) {
+      await page.uncheck(this.addressStepUseSameAddressCheckbox);
+      await page.click(this.addressStepContinueButton);
+      await this.fillAddressForm(page, invoiceAddress);
+    } else {
+      await page.check(this.addressStepUseSameAddressCheckbox);
+    }
+
     await page.click(this.addressStepContinueButton);
     return this.isStepCompleted(page, this.addressStepSection);
   }
 
   /**
    * Fill personal information form and click on continue
-   * @param page
-   * @param customerData
+   * @param page {Page} Browser tab
+   * @param customerData {object} Guest Customer's information to fill on form
    * @return {Promise<boolean>}
    */
   async setGuestPersonalInformation(page, customerData) {
@@ -353,7 +390,8 @@ class Checkout extends FOBasePage {
 
     // Click on continue
     await page.click(this.checkoutGuestContinueButton);
-    return this.isStepCompleted(page, this.personalInformationStepForm, 2000);
+
+    return this.isStepCompleted(page, this.personalInformationStepForm);
   }
 }
 
