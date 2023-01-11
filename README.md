@@ -3,7 +3,7 @@
 ## Para empezar
 
 https://devdocs.prestashop-project.org/1.7/basics/installation/localhost/
-https://github.com/PrestaShop/PrestaShop/tree/1.7.7.x
+https://github.com/PrestaShop/PrestaShop/tree/1.7.8.x
 
 1) ```composer install ```
 3) ```./tools/assets/build.sh```
