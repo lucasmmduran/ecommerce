@@ -19,7 +19,7 @@
 
 <div
   class="wishlist-add-to"
-  data-url="{$url}"
+  data-url="{$url|escape:'html':'UTF-8'}"
 >
   <div
     class="wishlist-modal modal fade"
@@ -53,15 +53,15 @@
             :product-id="productId"
             :product-attribute-id="productAttributeId"
             :quantity="quantity"
-            url="{$url}"
-            add-url="{$addUrl}"
+            url="{$url|escape:'html':'UTF-8'}"
+            add-url="{$addUrl|escape:'html':'UTF-8'}"
             empty-text="{l s='No list found.' d='Modules.Blockwishlist.Shop'}"
           ></choose-list>
         </div>
 
         <div class="modal-footer">
-          <a @click="openNewWishlistModal" class="wishlist-add-to-new text-primary">
-            <i class="material-icons">add_circle_outline</i> {$newWishlistCTA}
+          <a @click="openNewWishlistModal" class="wishlist-add-to-new">
+            <i class="material-icons">add_circle_outline</i> {$newWishlistCTA|escape:'html':'UTF-8'}
           </a>
         </div>
       </div>

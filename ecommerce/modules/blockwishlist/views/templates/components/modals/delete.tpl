@@ -20,10 +20,10 @@
 <div
   class="wishlist-delete"
   {if isset($listUrl)}
-    data-delete-list-url="{$listUrl}"
+    data-delete-list-url="{$listUrl|escape:'html':'UTF-8'}"
   {/if}
   {if isset($deleteProductUrl)}
-    data-delete-product-url="{$deleteProductUrl}"
+    data-delete-product-url="{$deleteProductUrl|escape:'html':'UTF-8'}"
   {/if}
   data-title="{l s='Remove product from wishlist' d='Modules.Blockwishlist.Shop'}"
   data-title-list="{l s='Delete wishlist' d='Modules.Blockwishlist.Shop'}"

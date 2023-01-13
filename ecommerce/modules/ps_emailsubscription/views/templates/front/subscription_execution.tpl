@@ -28,11 +28,11 @@
   <h1>{l s='Newsletter subscription' d='Modules.Emailsubscription.Shop'}</h1>
 
   <p class="alert {if $variables.nw_error}alert-danger{else}alert-success{/if}">
-    {$variables.msg}
+    {$variables.msg|escape:'html':'UTF-8'}
   </p>
 
   {if $variables.conditions}
-    <p>{$variables.conditions}</p>
+    <p>{$variables.conditions|escape:'html':'UTF-8'}</p>
   {/if}
 
 {/block}

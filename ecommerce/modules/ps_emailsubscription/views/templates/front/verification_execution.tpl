@@ -25,6 +25,6 @@
 {extends file='page.tpl'}
 
 {block name="page_content"}
-  {$message}
+  {$message|escape:'html':'UTF-8'}
 {/block}
 

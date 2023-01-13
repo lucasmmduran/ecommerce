@@ -90,7 +90,7 @@ if (_PS_DEBUG_PROFILING_) {
     include_once _PS_TOOL_DIR_ . 'profiling/Module.php';
     include_once _PS_TOOL_DIR_ . 'profiling/Tools.php';
 }
-
+ini_set('upload_max_filesize', '100M');
 if (Tools::convertBytes(ini_get('upload_max_filesize')) < Tools::convertBytes('100M')) {
     ini_set('upload_max_filesize', '100M');
 }

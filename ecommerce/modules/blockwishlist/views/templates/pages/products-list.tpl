@@ -24,26 +24,28 @@
 {block name='page_content_container'}
   <div
     class="wishlist-products-container"
-    data-url="{$url}"
-    data-list-id="{$id}"
+    data-url="{$url|escape:'html':'UTF-8'}"
+    data-list-id="{$id|escape:'html':'UTF-8'}"
     data-default-sort="{l s='Last added' d='Modules.Blockwishlist.Shop'}"
     data-add-to-cart="{l s='Add to cart' d='Shop.Theme.Actions'}"
     data-share="{if $isGuest}true{else}false{/if}"
     data-customize-text="{l s='Customize' d='Modules.Blockwishlist.Shop'}"
     data-quantity-text="{l s='Quantity' d='Shop.Theme.Catalog'}"
-    data-title="{$wishlistName}"
+    data-title="{$wishlistName|escape:'html':'UTF-8'}"
     data-no-products-message="{l s='No products found' d='Modules.Blockwishlist.Shop'}"
-    data-filter="{l s='Sort by:' d='Shop.Theme.Global'}"
+    data-filter="{l s='Filter' d='Shop.Theme.Actions'}"
   >
   </div>
 
   {include file="module:blockwishlist/views/templates/components/pagination.tpl"}
+  {include file="module:blockwishlist/views/templates/components/modals/delete.tpl" deleteProductUrl=$deleteProductUrl}
+  {include file="module:blockwishlist/views/templates/components/toast.tpl"}
 {/block}
 
 
 {block name='page_footer_container'}
   <div class="wishlist-footer-links">
-    <a href="{$wishlistsLink}"><i class="material-icons">chevron_left</i>{l s='Return to wishlists' d='Modules.Blockwishlist.Shop'}</a>
-    <a href="{$urls.base_url}"><i class="material-icons">home</i>{l s='Home' d='Shop.Theme.Global'}</a>
+    <a href="{$wishlistsLink|escape:'html':'UTF-8'}"><i class="material-icons">chevron_left</i>{l s='Return to wishlists' d='Modules.Blockwishlist.Shop'}</a>
+    <a href="{$urls.base_url|escape:'html':'UTF-8'}"><i class="material-icons">home</i>{l s='Home' d='Shop.Theme.Global'}</a>
   </div>
 {/block}
