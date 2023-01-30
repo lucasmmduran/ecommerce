@@ -331,7 +331,8 @@ class Ps_Categoryproducts extends Module implements WidgetInterface
         }
 
         $product = $configuration['product'];
-        $id_product = $product['id_product'];
+        var_dump($product);
+        $id_product =  $product->id_product;//$product['id_product'];
         $id_category = (isset($configuration['category']->id) ? (int) $configuration['category']->id : (int) $product['id_category_default']);
 
         if (!empty($id_product) && !empty($id_category)) {
