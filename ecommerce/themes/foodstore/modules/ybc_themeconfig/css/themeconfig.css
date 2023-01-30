@@ -113,6 +113,7 @@
     border: 1px solid #ccc;
 }
 .ybc-theme-panel-btn {
+  display: none !important;
   border-color: transparent transparent transparent red;
   border-style: solid;
   border-width: 30px;
@@ -374,11 +375,11 @@ body.ybc-cf-abel .content_price, body.ybc-cf-abel .new-label, body.ybc-cf-abel .
   padding: 0;
 }
 
-@media (max-width: 767px){
+/* @media (max-width: 767px){
     .ybc-theme-panel-btn {
       display: none !important;
     }
-}
+} */
 
 
 
