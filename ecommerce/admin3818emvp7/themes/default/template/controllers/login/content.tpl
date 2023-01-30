@@ -1,5 +1,5 @@
 <div id="login-header">
-    <img id="logo" src="{$img_dir}logo-argentina-blanco.png" width="254px" height="50px" alt="Secretaria" />
+    <img id="logo" src="{$img_dir}logo-almacen-campesino.png" width="150px" height="150px" alt="Secretaria" />
 </div>
 <div id="login-panel">
     

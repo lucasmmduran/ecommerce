@@ -24,10 +24,10 @@
 */
 $(document).ready(function(){    
 
-    setTimeout(function(){
-        $('.ybc-newsletter-popup').addClass('active'); 
-        $('.ybc_nlt_content').addClass(YBC_NEWSLETTER_POPUP_TYPE_SHOW);
-    }, parseInt(YBC_NEWSLETTER_POPUP_DELAY) > 1000 ? parseInt(YBC_NEWSLETTER_POPUP_DELAY) : 2000);
+    // setTimeout(function(){
+    //     $('.ybc-newsletter-popup').addClass('active'); 
+    //     $('.ybc_nlt_content').addClass(YBC_NEWSLETTER_POPUP_TYPE_SHOW);
+    // }, parseInt(YBC_NEWSLETTER_POPUP_DELAY) > 1000 ? parseInt(YBC_NEWSLETTER_POPUP_DELAY) : 2000);
     
     if($('.ybc-newsletter-popup').length > 0)
     {
