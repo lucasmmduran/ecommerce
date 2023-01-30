@@ -11,4 +11,3 @@ node_modules/
 /ecommerce/app/config/parameters.php
 /ecommerce/install
 /.docker/phpmyadmin/config.inc.php
-/ecommerce/robots.txt

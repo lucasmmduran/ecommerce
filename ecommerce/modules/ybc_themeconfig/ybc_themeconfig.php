@@ -163,11 +163,11 @@ class Ybc_themeconfig extends Module
                             array(
                                 'id_option' => 'GREEN_1', 
                                 'name' => $this->l('GREEN'),
-                                'main_color' => '#43b728',
+                                'main_color' => '#7B9E3E',
                                 'colors' => array(
-                                    'color1' => '#43b728',
-                                    'color2' => '#ff911d',
-                                    'color3' => '#f04624',
+                                    'color1' => '#7B9E3E',
+                                    'color2' => '#ff911d', // naranja (btn hover, links y circulos precios) -> quedo naranja
+                                    'color3' => '#552E29', // naranja mas oscuro (circulos descuentos) --> marron
                                     'color4' => '#ff6c8d',    
                                     'color5' => '#f8961d', 
                                     'color6' => '#ff8f8f',
