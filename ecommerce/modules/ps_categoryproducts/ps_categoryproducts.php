@@ -330,10 +330,13 @@ class Ps_Categoryproducts extends Module implements WidgetInterface
             return false;
         }
 
+        if(!isset($configuration['id_product'])){
+            return false;
+        }
+
+        $id_product = $configuration['id_product'];
         $product = $configuration['product'];
-        var_dump($product);
-        $id_product =  $product->id_product;//$product['id_product'];
-        $id_category = (isset($configuration['category']->id) ? (int) $configuration['category']->id : (int) $product['id_category_default']);
+        $id_category = (isset($configuration['category']) ? (int) $configuration['category']->id : $product->id_category_default);
 
         if (!empty($id_product) && !empty($id_category)) {
 
