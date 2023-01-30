@@ -10,4 +10,5 @@ node_modules/
 /ecommerce/var/sessions
 /ecommerce/app/config/parameters.php
 /ecommerce/install
-/ecommerce/.htaccess
+/.docker/phpmyadmin/config.inc.php
+/ecommerce/robots.txt
