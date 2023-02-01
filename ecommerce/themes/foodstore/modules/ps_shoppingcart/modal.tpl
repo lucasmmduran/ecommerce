@@ -74,7 +74,7 @@
                             <button type="button" class="btn btn-secondary"
                                     data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
                             <a href="{$cart_url|escape:'html':'UTF-8'}" class="btn btn-primary"><i
-                                        class="material-icons">&#xE876;</i>{l s='proceed to checkout' d='Shop.Theme.Actions'}
+                                        class="material-icons">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.Actions'}
                             </a>
                         </div>
                     </div>
