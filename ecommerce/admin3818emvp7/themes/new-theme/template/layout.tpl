@@ -17,10 +17,8 @@
       <button class="btn btn-primary-reverse onclick btn-lg unbind ajax-spinner"></button>
 
       {* Logo *}
-      {$ps_version}
       <i class="material-icons js-mobile-menu">menu</i>
       <a id="header_logo" class="logo float-left" href="{$default_tab_link|escape:'html':'UTF-8'}"></a>
-      <span id="shop_version">{$ps_version}</span>
 
       <div class="component" id="quick-access-container">
         {include file="components/layout/quick_access.tpl"}
