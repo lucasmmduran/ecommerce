@@ -29276,3 +29276,10 @@ table.table {
 .choice-table-headers-fixed table tbody .table .form-check {
   padding-left: 0;
 }
+.js-common_show_query-grid-action{
+    display: none !important;
+}
+
+.js-common_export_sql_manager-grid-action{
+    display: none !important;
+}
