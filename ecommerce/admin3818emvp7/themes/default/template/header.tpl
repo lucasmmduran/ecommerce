@@ -191,6 +191,9 @@
         });
       </script>
 
+    /*   {* Search *}
+      {include file="search_form.tpl" show_clear_btn=1}
+ */
       {if isset($debug_mode) && $debug_mode == true}
       <div class="component hide-mobile-sm">
           <a class="shop-state label-tooltip" id="debug-mode"
