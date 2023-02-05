@@ -14111,10 +14111,13 @@ body.display-modal #main {
   vertical-align: middle;
 }
 #header_infos #header_logo {
-  width: 210.08px;
+    width: 257px;
+  height: 6px;
+  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png);
+  /* width: 210.08px;
   width: 13.13rem;
   height: 100%;
-  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png) no-repeat center left;
+  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png) no-repeat center left; */
 }
 .mobile #header_infos #header_logo {
   -webkit-box-flex: 1;

@@ -92,7 +92,7 @@
       <i class="material-icons js-mobile-menu">menu</i>
 
       {* Logo *}
-      <a id="header_logo11" href="{$default_tab_link|escape:'html':'UTF-8'}" aria-label="{l s='PrestaShop logo' d='Admin.Navigation.Header'}"></a>
+      <a id="header_logo" href="{$default_tab_link|escape:'html':'UTF-8'}" aria-label="{l s='PrestaShop logo' d='Admin.Navigation.Header'}"></a>
 
       {* Quick access *}
       <div id="header_quick" class="component">
