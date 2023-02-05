@@ -45,11 +45,11 @@ RewriteRule ^.*$ - [NC,L]
 RewriteRule ^.*$ %{ENV:REWRITEBASE}index.php [NC,L]
 </IfModule>
 
-php_value upload_max_filesize 100M
+#php_value upload_max_filesize 100M
  
-php_value post_max_size 200M
+#php_value post_max_size 200M
  
-php_value memory_limit 320M
+#php_value memory_limit 320M
 AddType application/vnd.ms-fontobject .eot
 AddType font/ttf .ttf
 AddType font/otf .otf
