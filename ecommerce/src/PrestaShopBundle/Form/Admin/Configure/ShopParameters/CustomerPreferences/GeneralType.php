@@ -43,7 +43,7 @@ class GeneralType extends TranslatorAwareType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('redisplay_cart_at_login', SwitchType::class, [
+            /* ->add('redisplay_cart_at_login', SwitchType::class, [
                 'label' => $this->trans(
                     'Re-display cart at login',
                     'Admin.Shopparameters.Feature'
@@ -52,7 +52,7 @@ class GeneralType extends TranslatorAwareType
                     'After a customer logs in, you can recall and display the content of his/her last shopping cart.',
                     'Admin.Shopparameters.Help'
                 ),
-            ])
+            ]) */
             ->add('send_email_after_registration', SwitchType::class, [
                 'label' => $this->trans(
                     'Send an email after registration',
@@ -88,7 +88,7 @@ class GeneralType extends TranslatorAwareType
                 ),
                 'unit' => $this->trans('minutes', 'Admin.Shopparameters.Feature'),
             ])
-            ->add('enable_b2b_mode', SwitchType::class, [
+            /* ->add('enable_b2b_mode', SwitchType::class, [
                 'label' => $this->trans(
                     'Enable B2B mode',
                     'Admin.Shopparameters.Feature'
@@ -97,8 +97,8 @@ class GeneralType extends TranslatorAwareType
                     'Activate or deactivate B2B mode. When this option is enabled, B2B features will be made available.',
                     'Admin.Shopparameters.Help'
                 ),
-            ])
-            ->add('ask_for_birthday', SwitchType::class, [
+            ]) */
+            /* ->add('ask_for_birthday', SwitchType::class, [
                 'label' => $this->trans(
                     'Ask for birth date',
                     'Admin.Shopparameters.Feature'
@@ -107,7 +107,7 @@ class GeneralType extends TranslatorAwareType
                     'Display or not the birth date field.',
                     'Admin.Shopparameters.Help'
                 ),
-            ])
+            ]) */
             ->add('enable_offers', SwitchType::class, [
                 'label' => $this->trans(
                     'Enable partner offers',
