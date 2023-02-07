@@ -253,14 +253,14 @@ final class OrderGridDefinitionFactory extends AbstractFilterableGridDefinitionF
             )
         ;
 
-        if ($this->orderCountriesChoiceProvider->getChoices()) {
+        /* if ($this->orderCountriesChoiceProvider->getChoices()) {
             $columns->addAfter('new', (new DataColumn('country_name'))
                 ->setName($this->trans('Delivery', [], 'Admin.Global'))
                 ->setOptions([
                     'field' => 'country_name',
                 ])
             );
-        }
+        } */
 
         if ($this->configuration->get('PS_B2B_ENABLE')) {
             $columns->addAfter('customer', (new DataColumn('company'))
@@ -371,7 +371,7 @@ final class OrderGridDefinitionFactory extends AbstractFilterableGridDefinitionF
 
         $orderCountriesChoices = $this->orderCountriesChoiceProvider->getChoices();
 
-        if (!empty($orderCountriesChoices)) {
+        /* if (!empty($orderCountriesChoices)) {
             $filters->add((new Filter('country_name', ChoiceType::class))
                 ->setTypeOptions([
                     'required' => false,
@@ -379,7 +379,7 @@ final class OrderGridDefinitionFactory extends AbstractFilterableGridDefinitionF
                 ])
                 ->setAssociatedColumn('country_name')
             );
-        }
+        } */
 
         if ($this->configuration->get('PS_B2B_ENABLE')) {
             $filters->add((new Filter('company', TextType::class))
