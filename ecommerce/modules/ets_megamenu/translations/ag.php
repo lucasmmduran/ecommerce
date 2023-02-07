@@ -28,6 +28,15 @@ $_MODULE['<{ets_megamenu}prestashop>ets_megamenu_09c2242a2767cc2d7cd7a460dd003a6
 $_MODULE['<{ets_megamenu}prestashop>ets_megamenu_95ff0dbd3f00cfcd9ee25dadae9911c0'] = 'Clase personalizadas';
 $_MODULE['<{ets_megamenu}prestashop>ets_megamenu_9a13acfbbe8803801f8f291919352eee'] = 'Texto de la burbuja de alerta';
 $_MODULE['<{ets_megamenu}prestashop>ets_megamenu_1ed3f9c6f7037274596ab54ea292d5a7'] = 'Nuevo, Oferta, Hot....deje en blanco si no desea tener una alerta para este menu';
+$_MODULE['<{ets_megamenu}prestashop>form_a6a3c692b271fcc9c06e1758590384cc'] = 'Limpiar cache de menu';
+$_MODULE['<{ets_megamenu}prestashop>form_63f57742717e6101a066d7275360332d'] = 'Imagen cargada';
+$_MODULE['<{ets_megamenu}prestashop>form_687cbf3e103f4ec4facecab72e3008a4'] = 'Click para ver imagen en tamaño completo';
+$_MODULE['<{ets_megamenu}prestashop>form_a8d009b33e7c67b45cf2f14fe6d419ad'] = 'Resetar solo configuración. La información del menu no se perderá.';
+$_MODULE['<{ets_megamenu}prestashop>form_526d688f37a86d3c3f27d0c5016eb71d'] = 'Resetear';
+$_MODULE['<{ets_megamenu}prestashop>form_16bfbf9c462762cf1cba4134ec53c504'] = 'Cargando';
+$_MODULE['<{ets_megamenu}prestashop>form_4e11db406c6c9f234fe8579cc9bc5ef6'] = 'Guardando';
+$_MODULE['<{ets_megamenu}prestashop>form_0db377921f4ce762c62526131097968f'] = 'General';
+$_MODULE['<{ets_megamenu}prestashop>form_1afa74da05ca145d3418aad9af510109'] = 'Diseño';
 $_MODULE['<{ets_megamenu}prestashop>megamenu_b61541208db7fa7dba42c85224405911'] = 'Menu';
 $_MODULE['<{ets_megamenu}prestashop>product-list_c91e4ee170226d66e90f99ba917e4c20'] = 'Vista rapida';
 $_MODULE['<{ets_megamenu}prestashop>product-list_2d0f6b8300be19cf35e89e66f0677f95'] = 'Agregar al carrito';
