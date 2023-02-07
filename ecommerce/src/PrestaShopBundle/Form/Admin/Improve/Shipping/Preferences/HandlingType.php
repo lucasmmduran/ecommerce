@@ -81,8 +81,8 @@ class HandlingType extends TranslatorAwareType
                     'Handling charges',
                     'Admin.Shipping.Feature'
                 ),
-            ]);
-            /* ->add('free_shipping_price', MoneyType::class, [
+            ])
+            ->add('free_shipping_price', MoneyType::class, [
                 'currency' => $defaultCurrency->iso_code,
                 'required' => false,
                 'empty_data' => '0',
@@ -94,8 +94,8 @@ class HandlingType extends TranslatorAwareType
                     'Free shipping starts at',
                     'Admin.Shipping.Feature'
                 ),
-            ]) */
-           /*  ->add('free_shipping_weight', TextWithUnitType::class, [
+            ])
+            ->add('free_shipping_weight', TextWithUnitType::class, [
                 'unit' => $weightUnit,
                 'required' => false,
                 'empty_data' => '0',
@@ -107,7 +107,7 @@ class HandlingType extends TranslatorAwareType
                     new GreaterThanOrEqual(['value' => 0]),
                     new Type(['type' => 'numeric']),
                 ],
-            ]); */
+            ]);
     }
 
     /**

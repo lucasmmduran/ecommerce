@@ -105,14 +105,14 @@ class PreferencesFormDataProvider implements FormDataProviderInterface
                 'value' => $data['handling']['shipping_handling_charges'],
                 'name' => $this->translator->trans('Handling charges', [], 'Admin.Shipping.Feature'),
             ],
-            /* [
+            [
                 'value' => $data['handling']['free_shipping_price'],
                 'name' => $this->translator->trans('Free shipping starts at', [], 'Admin.Shipping.Feature'),
             ],
             [
                 'value' => $data['handling']['free_shipping_weight'],
                 'name' => $this->translator->trans('Free shipping starts at', [], 'Admin.Shipping.Feature'),
-            ], */
+            ],
         ];
 
         // Check if all numeric fields are positive numbers
