@@ -96,7 +96,9 @@ class CustomerAddressFormatterCore implements FormFormatterInterface
                     if ($this->country->need_identification_number) {
                         $formField->setRequired(true);
                     }
-                }
+                } elseif ($field == 'vat_number') {
+			$formField->setType('hidden');
+		}
             } elseif (count($fieldParts) === 2) {
                 list($entity, $entityField) = $fieldParts;
 
