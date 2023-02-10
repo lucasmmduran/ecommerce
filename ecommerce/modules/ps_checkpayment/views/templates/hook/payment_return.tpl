@@ -27,6 +27,9 @@
 	<p>
 		{l s='Your order on %s is complete.' sprintf=[$shop_name] d='Modules.Checkpayment.Shop'}
 	</p>
+    <p>
+		asdasdsdasdadasddas
+	</p>
 
 	<p>
 		{l s='Your check must include:' d='Modules.Checkpayment.Shop'}
