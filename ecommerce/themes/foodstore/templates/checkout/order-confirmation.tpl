@@ -43,6 +43,7 @@
               {/if}
             </p>
             {$HOOK_ORDER_CONFIRMATION nofilter}
+            <zx<zx<zx<zx<zx<xzx
           </div>
         </div>
       </div>
