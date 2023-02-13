@@ -218,13 +218,12 @@ class ProductInformation extends CommonAbstractType
             ->add('name', TranslateType::class, [
                 'type' => FormType\TextType::class,
                 'options' => [
-                    'required' => true,
                     'constraints' => [
                         new Assert\Regex([
                             'pattern' => '/[<>;=#{}]/',
                             'match' => false,
                         ]),
-                        /* new Assert\NotBlank(), */
+                        new Assert\NotBlank(),
                         new Assert\Length(['min' => 3, 'max' => 128]),
                     ],
                     'attr' => [
