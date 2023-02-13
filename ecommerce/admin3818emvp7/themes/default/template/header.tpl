@@ -96,7 +96,8 @@
 
       {* Quick access *}
       <div id="header_quick" class="component">
-        <div class="dropdown">
+        &nbsp; &nbsp; 
+        {*<div class="dropdown">
           <button
             id="quick_select"
             class="btn btn-link dropdown-toggle"
@@ -136,7 +137,7 @@
               </a>
             </li>
           </ul>
-        </div>
+        </div> *}
       </div>
       {$quick_access_current_link_name = " - "|explode:$quick_access_current_link_name}
       <script>
