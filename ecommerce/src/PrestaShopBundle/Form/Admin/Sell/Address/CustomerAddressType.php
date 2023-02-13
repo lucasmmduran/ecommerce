@@ -319,10 +319,10 @@ class CustomerAddressType extends TranslatorAwareType
                 'label' => $this->trans('Zip/Postal code', 'Admin.Global'),
                 'empty_data' => '',
                 'constraints' => [
-                    new AddressZipCode([
+                    /* new AddressZipCode([
                         'id_country' => $countryId,
                         'required' => false,
-                    ]),
+                    ]), */
                     new CleanHtml(),
                     new TypedRegex([
                         'type' => TypedRegex::TYPE_POST_CODE,
