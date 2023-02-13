@@ -20,6 +20,7 @@
 *}
 {extends file='page.tpl'}
 
+{*
 {block name='breadcrumb'}
   <div class="container">
         <nav class="breadcrumb">
@@ -40,7 +41,7 @@
           </ol>
         </nav>
     </div>
-{/block}
+{/block}*}
 
 {block name='page_content'}
     
