@@ -253,7 +253,7 @@ class CustomerAddressType extends TranslatorAwareType
                     ]),
                 ],
             ])
-            ->add('vat_number', TextType::class, [
+            /* ->add('vat_number', TextType::class, [
                 'label' => $this->trans('VAT number', 'Admin.Orderscustomers.Feature'),
                 'required' => false,
                 'empty_data' => '',
@@ -271,7 +271,7 @@ class CustomerAddressType extends TranslatorAwareType
                         ),
                     ]),
                 ],
-            ])
+            ]) */
             ->add('address1', TextType::class, [
                 'label' => $this->trans('Address', 'Admin.Global'),
                 'required' => true,
@@ -360,7 +360,7 @@ class CustomerAddressType extends TranslatorAwareType
                     ]),
                 ],
             ])
-            ->add('id_country', CountryChoiceType::class, [
+            /* ->add('id_country', CountryChoiceType::class, [
                 'label' => $this->trans('Country', 'Admin.Global'),
                 'required' => true,
                 'with_dni_attr' => true,
@@ -374,7 +374,7 @@ class CustomerAddressType extends TranslatorAwareType
                 ],
                 'attr' => [
                     'data-states-url' => $this->router->generate('admin_country_states'),
-                ],
+                ], */
             ])->add('id_state', ChoiceType::class, [
                 'label' => $this->trans('State', 'Admin.Global'),
                 'required' => true,
