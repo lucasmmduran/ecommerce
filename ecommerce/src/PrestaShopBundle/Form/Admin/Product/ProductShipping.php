@@ -165,10 +165,10 @@ class ProductShipping extends CommonAbstractType
                     'required' => false,
                     'label' => $this->translator->trans('Shipping fees', [], 'Admin.Catalog.Feature'),
                     'currency' => $this->currency->iso_code,
-                    'constraints' => [
+                    /* 'constraints' => [
                         new Assert\NotBlank(),
                         new Assert\Type(['type' => 'float']),
-                    ],
+                    ], */
                 ]
             )
             ->add(
