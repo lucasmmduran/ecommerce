@@ -18,7 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<section id="content" class="page-content page-not-found">
+{*<section id="content" class="page-content page-not-found">
   <h4>{l s='Sorry for the inconvenience.' d='Shop.Theme.Actions'}</h4>
   <p>{l s='Search again what you are looking for' d='Shop.Theme.Actions'}</p>
 
@@ -27,4 +27,4 @@
   {/block}
 
   {hook h='displayNotFound'}
-</section>
+</section>*}
