@@ -30,9 +30,9 @@
             </h3>
 		<p>Hemos recibido su pedido.</p>
 		<p>Si selecciono la opcion Retiro en tienda, pase por nuestro local que lo vamos a estar esperando!</p>
-		<p>Si selecciono envio a domicilio nos pondremos en contacto con usted dentro de las 24hs para coordinar la entrega.</p><p>Muchas gracias!</p>
-		<p>              
-		{*{l s='An email has been sent to your mail address %email%.' d='Shop.Theme.Checkout' sprintf=['%email%' => $customer.email]} *}
+		<p>Si selecciono envio a domicilio nos pondremos en contacto con usted dentro de las 24hs para coordinar la entrega.
+		</p><p>Muchas gracias!</p><p>
+              {*{l s='An email has been sent to your mail address %email%.' d='Shop.Theme.Checkout' sprintf=['%email%' => $customer.email]} *}
               
               {if $order.details.invoice_url}
                 {* [1][/1] is for a HTML tag. *}
@@ -46,8 +46,8 @@
                 }
               {/if}
             </p>
-            {* {$HOOK_ORDER_CONFIRMATION nofilter} *}
-          
+            {$HOOK_ORDER_CONFIRMATION nofilter}
+            
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
 {/block}
 
 {block name='page_content_container'}
-  <section style="margin-bottom: 80px;" id="content" class="page-content page-order-confirmation card col-xs-12 col-sm-12">
+  <section id="content" class="page-content page-order-confirmation card col-xs-12 col-sm-12">
     <div class="card-block">
       <div class="row">
 
