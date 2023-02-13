@@ -218,6 +218,7 @@ class ProductInformation extends CommonAbstractType
             ->add('name', TranslateType::class, [
                 'type' => FormType\TextType::class,
                 'options' => [
+                    'required' => true,
                     'constraints' => [
                         new Assert\Regex([
                             'pattern' => '/[<>;=#{}]/',
