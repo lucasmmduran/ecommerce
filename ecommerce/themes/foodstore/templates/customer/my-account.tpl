@@ -29,7 +29,7 @@
       <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="identity-link" href="{$urls.pages.identity|escape:'html':'UTF-8'}">
         <span class="link-item">
           <i class="material-icons">&#xE853;</i>
-          {l s='Information' d='Shop.Theme.Actions'}
+          {l s='Informacion básica' d='Shop.Theme.Actions'}
         </span>
       </a>
 
@@ -44,7 +44,7 @@
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="address-link" href="{$urls.pages.address|escape:'html':'UTF-8'}">
           <span class="link-item">
             <i class="material-icons">&#xE567;</i>
-            {l s='Add first address' d='Shop.Theme.Actions'}
+            {l s='Agregar dirección' d='Shop.Theme.Actions'}
           </span>
         </a>
       {/if}
@@ -53,11 +53,11 @@
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="history-link" href="{$urls.pages.history|escape:'html':'UTF-8'}">
           <span class="link-item">
             <i class="material-icons">&#xE916;</i>
-            {l s='Order history and details' d='Shop.Theme.Actions'}
+            {l s='Historial de ordenes' d='Shop.Theme.Actions'}
           </span>
         </a>
       {/if}
-
+        {*
       {if !$configuration.is_catalog}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="order-slips-link" href="{$urls.pages.order_slip|escape:'html':'UTF-8'}">
           <span class="link-item">
@@ -74,7 +74,7 @@
             {l s='Vouchers' d='Shop.Theme.Actions'}
           </span>
         </a>
-      {/if}
+      {/if}*}
 
       {if $configuration.return_enabled && !$configuration.is_catalog}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="returns-link" href="{$urls.pages.order_follow|escape:'html':'UTF-8'}">
