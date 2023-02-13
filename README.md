@@ -16,3 +16,7 @@ Development version: http://127.0.0.1/prestashop/install-dev
 hay un punto que hace validaciones contra los archivos de symfony y devuelve 'This value should not be blank.' esto se debe cambiar en el archivo de la siguiente ruta
 
 ecommerce/vendor/symfony/symfony/src/Symfony/Component/Validator/Constraints/NotBlank.php
+
+enlace para ver el listado de iconos
+
+https://codepen.io/btn-ninja/pen/YrXmax
