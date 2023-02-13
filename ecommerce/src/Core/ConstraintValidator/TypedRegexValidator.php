@@ -114,7 +114,7 @@ class TypedRegexValidator extends ConstraintValidator
             case TypedRegex::TYPE_ADDRESS:
                 return $this->characterCleaner->cleanNonUnicodeSupport('/^[^!<>?=+@{}_$%]*$/u');
             case TypedRegex::TYPE_POST_CODE:
-                return '/^[a-zA-Z 0-9-]+$/';
+                return '/^[0-9-]+$/';
             case TypedRegex::TYPE_PHONE_NUMBER:
                 return '/^[+0-9. ()\/-]*$/';
             case TypedRegex::TYPE_MESSAGE:
