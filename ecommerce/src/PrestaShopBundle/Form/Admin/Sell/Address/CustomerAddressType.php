@@ -356,7 +356,7 @@ class CustomerAddressType extends TranslatorAwareType
                     ]),
                 ],
             ])
-            ->add('id_country', CountryChoiceType::class, [
+            /* ->add('id_country', CountryChoiceType::class, [
                 'label' => $this->trans('Country', 'Admin.Global'),
                 'required' => true,
                 'with_dni_attr' => true,
@@ -371,7 +371,7 @@ class CustomerAddressType extends TranslatorAwareType
                 'attr' => [
                     'data-states-url' => $this->router->generate('admin_country_states'),
                 ],
-            ])
+            ]) */
             ->add('id_state', ChoiceType::class, [
                 'label' => $this->trans('State', 'Admin.Global'),
                 'required' => true,
