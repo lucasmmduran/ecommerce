@@ -63,13 +63,13 @@
       </li>
     {% endif %}
 
-    {% if productForm.shipping is defined %}
+   {#  {% if productForm.shipping is defined %}
       <li id="shipping-tab-nav" class="nav-item{% if not isShippingTabValid %} has-error{% endif %}">
         <a href="#shipping-tab" role="tab" data-toggle="tab" class="nav-link">
           {{ 'Shipping'|trans({}, 'Admin.Catalog.Feature') }}
         </a>
       </li>
-    {% endif %}
+    {% endif %} #}
 
     <li id="pricing-tab-nav" class="nav-item{% if not isPricingTabValid %} has-error{% endif %}">
       <a href="#pricing-tab" role="tab" data-toggle="tab" class="nav-link">
