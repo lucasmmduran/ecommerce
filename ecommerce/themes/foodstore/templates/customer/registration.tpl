@@ -21,14 +21,14 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='Create an account' d='Shop.Theme.Actions'}
+  {l s='Crear cuenta' d='Shop.Theme.Actions'}
 {/block}
 
 {block name='page_content'}
     {block name='register_form_container'}
       {$hook_create_account_top nofilter}
       <section class="register-form">
-        <p>{l s='Already have an account?' d='Shop.Theme.Actions'} <a href="{$urls.pages.authentication|escape:'html':'UTF-8'}">{l s='Log in instead!' d='Shop.Theme.Actions'}</a></p>
+        <p>{l s='ya tenés cuenta?' d='Shop.Theme.Actions'} <a href="{$urls.pages.authentication|escape:'html':'UTF-8'}">{l s='Iniciar sesión!' d='Shop.Theme.Actions'}</a></p>
         {render file='customer/_partials/customer-form.tpl' ui=$register_form}
       </section>
     {/block}

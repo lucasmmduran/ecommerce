@@ -216,7 +216,7 @@ class CustomerFormatterCore implements FormFormatterInterface
                 );
         }
 
-        if ($this->ask_for_partner_optin) {
+        /* if ($this->ask_for_partner_optin) {
             $format['optin'] = (new FormField())
                 ->setName('optin')
                 ->setType('checkbox')
@@ -228,7 +228,7 @@ class CustomerFormatterCore implements FormFormatterInterface
                     )
                 )
                 ->setRequired($this->partner_optin_is_required);
-        }
+        } */
 
         // ToDo, replace the hook exec with HookFinder when the associated PR will be merged
         $additionalCustomerFormFields = Hook::exec('additionalCustomerFormFields', ['fields' => &$format], null, true);
