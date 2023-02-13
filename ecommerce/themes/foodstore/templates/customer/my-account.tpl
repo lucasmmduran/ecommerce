@@ -36,14 +36,14 @@
       {if $customer.addresses|count}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="addresses-link" href="{$urls.pages.addresses|escape:'html':'UTF-8'}">
           <span class="link-item">
-            <i class="material-icons">&#xE56A;</i>
+            <i class="material-icons">&#xE54E;</i>
             {l s='Direcciones' d='Shop.Theme.Actions'}
           </span>
         </a>
       {else}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="address-link" href="{$urls.pages.address|escape:'html':'UTF-8'}">
           <span class="link-item">
-            <i class="material-icons">&#xE567;</i>
+            <i class="material-icons">&#xE54E;</i>
             {l s='Agregar dirección' d='Shop.Theme.Actions'}
           </span>
         </a>
@@ -84,10 +84,10 @@
           </span>
         </a>
       {/if}*}
-
+{*
       {block name='display_customer_account'}
         {hook h='displayCustomerAccount'}
-      {/block}
+      {/block}*}
 
     </div>
 {/block}
