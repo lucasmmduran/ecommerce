@@ -223,7 +223,7 @@ class ProductInformation extends CommonAbstractType
                             'pattern' => '/[<>;=#{}]/',
                             'match' => false,
                         ]),
-                        new Assert\NotBlank(),
+                        /* new Assert\NotBlank(), */
                         new Assert\Length(['min' => 3, 'max' => 128]),
                     ],
                     'attr' => [
