@@ -37,7 +37,7 @@
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="addresses-link" href="{$urls.pages.addresses|escape:'html':'UTF-8'}">
           <span class="link-item">
             <i class="material-icons">&#xE56A;</i>
-            {l s='Addresses' d='Shop.Theme.Actions'}
+            {l s='Direcciones' d='Shop.Theme.Actions'}
           </span>
         </a>
       {else}
@@ -75,7 +75,7 @@
           </span>
         </a>
       {/if}*}
-
+        {*
       {if $configuration.return_enabled && !$configuration.is_catalog}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="returns-link" href="{$urls.pages.order_follow|escape:'html':'UTF-8'}">
           <span class="link-item">
@@ -83,7 +83,7 @@
             {l s='Merchandise returns' d='Shop.Theme.Actions'}
           </span>
         </a>
-      {/if}
+      {/if}*}
 
       {block name='display_customer_account'}
         {hook h='displayCustomerAccount'}
