@@ -36,14 +36,14 @@
       {if $customer.addresses|count}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="addresses-link" href="{$urls.pages.addresses|escape:'html':'UTF-8'}">
           <span class="link-item">
-            <i class="material-icons">&#xE54E;</i>
+            <i class="material-icons">&#xe567;</i>
             {l s='Direcciones' d='Shop.Theme.Actions'}
           </span>
         </a>
       {else}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="address-link" href="{$urls.pages.address|escape:'html':'UTF-8'}">
           <span class="link-item">
-            <i class="material-icons">&#xE54E;</i>
+            <i class="material-icons">&#xe567;</i>
             {l s='Agregar dirección' d='Shop.Theme.Actions'}
           </span>
         </a>
@@ -52,7 +52,7 @@
       {if !$configuration.is_catalog}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="history-link" href="{$urls.pages.history|escape:'html':'UTF-8'}">
           <span class="link-item">
-            <i class="material-icons">&#xE916;</i>
+            <i class="material-icons event_note">&#xe616;</i>
             {l s='Historial de ordenes' d='Shop.Theme.Actions'}
           </span>
         </a>
