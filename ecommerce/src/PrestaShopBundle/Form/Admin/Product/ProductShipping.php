@@ -116,10 +116,10 @@ class ProductShipping extends CommonAbstractType
             [
                 'required' => false,
                 'label' => $this->translator->trans('Width', [], 'Admin.Catalog.Feature'),
-                'constraints' => [
+                /* 'constraints' => [
                     new Assert\NotBlank(),
                     new Assert\Type(['type' => 'numeric']),
-                ],
+                ], */
             ]
         )
             ->add(
@@ -128,10 +128,10 @@ class ProductShipping extends CommonAbstractType
                 [
                     'required' => false,
                     'label' => $this->translator->trans('Height', [], 'Admin.Catalog.Feature'),
-                    'constraints' => [
+                    /* 'constraints' => [
                         new Assert\NotBlank(),
                         new Assert\Type(['type' => 'numeric']),
-                    ],
+                    ], */
                 ]
             )
             ->add(
@@ -140,10 +140,10 @@ class ProductShipping extends CommonAbstractType
                 [
                     'required' => false,
                     'label' => $this->translator->trans('Depth', [], 'Admin.Catalog.Feature'),
-                    'constraints' => [
+                    /* 'constraints' => [
                         new Assert\NotBlank(),
                         new Assert\Type(['type' => 'numeric']),
-                    ],
+                    ], */
                 ]
             )
             ->add(
@@ -152,10 +152,10 @@ class ProductShipping extends CommonAbstractType
                 [
                     'required' => false,
                     'label' => $this->translator->trans('Weight', [], 'Admin.Catalog.Feature'),
-                    'constraints' => [
+                    /* 'constraints' => [
                         new Assert\NotBlank(),
                         new Assert\Type(['type' => 'numeric']),
-                    ],
+                    ], */
                 ]
             )
             ->add(
