@@ -205,9 +205,7 @@ class ManufacturerAddressType extends TranslatorAwareType
                 'required' => false,
                 'empty_data' => '',
                 'constraints' => [
-                    new TypedRegex([
-                        'type' => 'post_code',
-                    ]),
+                    
                     new Length([
                         'max' => AddressSettings::MAX_POST_CODE_LENGTH,
                         'maxMessage' => $this->trans(
