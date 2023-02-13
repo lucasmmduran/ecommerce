@@ -58,11 +58,11 @@
               <div class="no-account register_form">
                 <div class="register_form_cell">
                     <a href="{$urls.pages.register|escape:'html':'UTF-8'}" data-link-action="display-register-form">
-                      {l s='No account? Create one here' d='Shop.Theme.Catalog'}
+                      {l s='No tenés cuenta? crear una cuenta' d='Shop.Theme.Catalog'}
                     </a>
                     <div class="clearfix"></div>
                     <a class="btn btn-primary button-to-register-form" href="{$urls.pages.register|escape:'html':'UTF-8'}" data-link-action="display-register-form">
-                      {l s='Register' d='Shop.Theme.Catalog'}
+                      {l s='Registrarse' d='Shop.Theme.Catalog'}
                     </a>
                 </div>
               </div>
