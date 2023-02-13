@@ -15596,7 +15596,7 @@ li.product-flag.on-sale {
     line-height: 20px;
 }
 .des_footer{
-	margin-bottom: 7px;
+	margin-bottom: 36px;
 }
 #footer p {
     color: #e3e3e3;
@@ -19132,7 +19132,7 @@ li {
     .footer_top .links {
         float: left;
         margin-bottom: 30px;
-        width: 50%;
+        /* width: 50%; */
     }
 
     .footer_top #block_myaccount_infos {
@@ -19144,7 +19144,7 @@ li {
     .footer_top .block-contact {
         float: left;
         padding-left: 15px;
-        width: 50%;
+        /* width: 50%; */
     }
 
     .footer_top .wrapper li {
