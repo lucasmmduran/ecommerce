@@ -21,14 +21,14 @@
 {extends file='page.tpl'}
 
 {block name='page_title'}
-  {l s='Forgot your password?' d='Shop.Theme.Actions'}
+  {l s='Olvidaste tu contraseña?' d='Shop.Theme.Actions'}
 {/block}
 
 {block name='page_content'}
   <form action="{$urls.pages.password|escape:'html':'UTF-8'}" method="post">
 
     <header>
-      <p>{l s='Please enter the email address you used to register. You will receive a temporary link to reset your password.' d='Shop.Theme.Actions'}</p>
+      <p>{l s='Por favor, introduzca la dirección de correo electrónico que utilizó para registrarse. Recibirá un enlace temporal para restablecer su contraseña.' d='Shop.Theme.Actions'}</p>
     </header>
 
     <section class="form-fields">
