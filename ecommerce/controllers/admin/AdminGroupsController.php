@@ -620,7 +620,7 @@ class AdminGroupsControllerCore extends AdminController
         $guest_group_information = $this->trans('%group_name% - All persons who placed an order through Guest Checkout.', ['%group_name%' => '<b>' . $guest->name[$this->context->language->id] . '</b>'], 'Admin.Shopparameters.Help');
         $default_group_information = $this->trans('%group_name% - All persons who created an account on this site.', ['%group_name%' => '<b>' . $default->name[$this->context->language->id] . '</b>'], 'Admin.Shopparameters.Help');
 
-        $this->displayInformation($this->trans('PrestaShop has three default customer groups:', [], 'Admin.Shopparameters.Help'));
+        /* $this->displayInformation($this->trans('PrestaShop has three default customer groups:', [], 'Admin.Shopparameters.Help')); */
         $this->displayInformation($unidentified_group_information);
         $this->displayInformation($guest_group_information);
         $this->displayInformation($default_group_information);

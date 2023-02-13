@@ -231,34 +231,34 @@ function displaySummary()
 			range_sup = $(this).val();
 	});
 
-	$('#summary_range').html(
+	/* $('#summary_range').html(
 		$('#summary_range').html()
 		.replace('%1$s', '<strong>' + range_inf +' '+ unit + '</strong>')
 		.replace('%2$s', '<strong>' + range_sup +' '+ unit + '</strong>')
 		.replace('%3$s', '<strong>' + $('#range_behavior option:selected').text().toLowerCase() + '</strong>')
-	);
+	); */
 	if ($('#is_free_on').prop('checked'))
 		$('span.is_free').hide();
 	// Delivery zones
 	$('#summary_zones').html('');
-	$('.input_zone').each(function(){
+	/* $('.input_zone').each(function(){
 		if ($(this).prop('checked'))
 			$('#summary_zones').html($('#summary_zones').html() + '<li><strong>' + $(this).closest('tr').find('label').text() + '</strong></li>');
-	});
+	}); */
 
 	// Group restrictions
 	$('#summary_groups').html('');
-	$('input[name$="groupBox[]"]').each(function(){
+	/* $('input[name$="groupBox[]"]').each(function(){
 		if ($(this).prop('checked'))
 			$('#summary_groups').html($('#summary_groups').html() + '<li><strong>' + $(this).closest('tr').find('td:eq(2)').text() + '</strong></li>');
-	});
+	}); */
 
 	// shop restrictions
 	$('#summary_shops').html('');
-	$('.input_shop').each(function(){
+	/* $('.input_shop').each(function(){
 		if ($(this).prop('checked'))
 			$('#summary_shops').html($('#summary_shops').html() + '<li><strong>' + $(this).closest().text() + '</strong></li>');
-	});
+	}); */
 }
 
 function validateSteps(fromStep, toStep)

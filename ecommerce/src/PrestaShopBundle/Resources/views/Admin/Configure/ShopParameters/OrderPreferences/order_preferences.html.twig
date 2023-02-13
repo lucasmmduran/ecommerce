@@ -31,10 +31,11 @@
     {% include '@PrestaShop/Admin/Configure/ShopParameters/OrderPreferences/Blocks/order_preferences_general.html.twig' %}
   {{ form_end(generalForm) }}
 
-  {{ form_start(giftOptionsForm, {attr : {class: 'form', id: 'configuration_gift_options_form'}, action: path('admin_order_preferences_gift_options_save') }) }}
     {# Gift options block #}
+  {# {{ form_start(giftOptionsForm, {attr : {class: 'form', id: 'configuration_gift_options_form'}, action: path('admin_order_preferences_gift_options_save') }) }}
+    
     {% include '@PrestaShop/Admin/Configure/ShopParameters/OrderPreferences/Blocks/order_preferences_gift_options.html.twig' %}
-  {{ form_end(giftOptionsForm) }}
+  {{ form_end(giftOptionsForm) }} #}
 {% endblock %}
 
 {% block javascripts %}

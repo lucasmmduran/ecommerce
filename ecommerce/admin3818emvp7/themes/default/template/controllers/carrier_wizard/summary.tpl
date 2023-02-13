@@ -40,7 +40,7 @@
 		<div class="panel-heading">{l s='Carrier name:' d='Admin.Shipping.Feature'} <strong id="summary_name"></strong></div>
 		<div class="panel-body">
 			<p id="summary_meta_informations"></p>
-			<p id="summary_shipping_cost"></p>
+			{*<p id="summary_shipping_cost"></p>
 			<p id="summary_range"></p>
 			<div>
 			{l s='This carrier will be proposed for those delivery zones:' d='Admin.Shipping.Feature'}
@@ -55,7 +55,7 @@
 				{l s='Finally, this carrier will be proposed in those shops:' d='Admin.Shipping.Feature'}
 				<ul id="summary_shops"></ul>
 			</div>
-			{/if}
+			{/if} *}
 		</div>
 	</div>
 	{$active_form}

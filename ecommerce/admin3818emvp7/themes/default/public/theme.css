@@ -14111,10 +14111,13 @@ body.display-modal #main {
   vertical-align: middle;
 }
 #header_infos #header_logo {
-  width: 210.08px;
+    width: 257px;
+  height: 6px;
+  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png);
+  /* width: 210.08px;
   width: 13.13rem;
   height: 100%;
-  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png) no-repeat center left;
+  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png) no-repeat center left; */
 }
 .mobile #header_infos #header_logo {
   -webkit-box-flex: 1;
@@ -26120,4 +26123,11 @@ html[dir="rtl"] .select2-search-choice-close {
   src: local("Ubuntu Condensed"), local("UbuntuCondensed-Regular"),
     url(eb24af6668c633feab6bf8f989296e73.woff2) format("woff2"),
     url(5be71612af754cc566ec30ef200d8a65.woff) format("woff");
+}
+.js-common_show_query-grid-action{
+    display: none !important;
+}
+
+.js-common_export_sql_manager-grid-action{
+    display: none !important;
 }

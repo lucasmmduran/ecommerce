@@ -83,6 +83,7 @@ class EmployeeController extends FrameworkBundleAdminController
         $employeeGridFactory = $this->get('prestashop.core.grid.factory.employee');
         $employeeGrid = $employeeGridFactory->getGrid($filters);
 
+
         $helperCardDocumentationLinkProvider =
             $this->get('prestashop.core.util.helper_card.documentation_link_provider');
 

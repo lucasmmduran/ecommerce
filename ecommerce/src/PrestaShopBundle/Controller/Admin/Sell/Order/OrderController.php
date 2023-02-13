@@ -366,7 +366,7 @@ class OrderController extends FrameworkBundleAdminController
             'id_order' => $this->trans('ID', 'Admin.Global'),
             'reference' => $this->trans('Reference', 'Admin.Global'),
             'new' => $this->trans('New client', 'Admin.Orderscustomers.Feature'),
-            'country_name' => $this->trans('Delivery', 'Admin.Global'),
+            /* 'country_name' => $this->trans('Delivery', 'Admin.Global'), */
             'customer' => $this->trans('Customer', 'Admin.Global'),
             'total_paid_tax_incl' => $this->trans('Total', 'Admin.Global'),
             'payment' => $this->trans('Payment', 'Admin.Global'),
@@ -385,7 +385,7 @@ class OrderController extends FrameworkBundleAdminController
                 'id_order' => $record['id_order'],
                 'reference' => $record['reference'],
                 'new' => $record['new'],
-                'country_name' => $record['country_name'],
+                /* 'country_name' => $record['country_name'], */
                 'customer' => $record['customer'],
                 'total_paid_tax_incl' => $record['total_paid_tax_incl'],
                 'payment' => $record['payment'],
