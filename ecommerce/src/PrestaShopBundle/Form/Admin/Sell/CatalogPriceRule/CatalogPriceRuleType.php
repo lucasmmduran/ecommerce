@@ -124,11 +124,11 @@ class CatalogPriceRuleType extends AbstractType
                 'placeholder' => false,
                 'choices' => $this->getModifiedCurrencyChoices(),
             ])
-            ->add('id_country', ChoiceType::class, [
+            /* ->add('id_country', ChoiceType::class, [
                 'required' => false,
                 'placeholder' => false,
                 'choices' => $this->getModifiedCountryChoices(),
-            ])
+            ]) */
             ->add('id_group', ChoiceType::class, [
                 'required' => false,
                 'placeholder' => false,

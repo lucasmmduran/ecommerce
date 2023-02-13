@@ -236,12 +236,13 @@
                           )
                         }}
                       </div>
-                      <div class="col-md-12">
+                      {# First tag [1][/1] is for a HTML link. Second tag [2] is an icon (no closing tag needed). #}
+                      {# <div class="col-md-12">
                         <span class="small font-secondary">
-                          {# First tag [1][/1] is for a HTML link. Second tag [2] is an icon (no closing tag needed). #}
+                          
                           {{ "Advanced settings in [1][2]Pricing[/1]"|trans({}, 'Admin.Catalog.Help')|replace({'[1]': '<a href="#tab-step2" onclick="$(\'a[href=\\\'#step2\\\']\').click();" class="btn sensitive px-0">', '[/1]': '</a>', '[2]': '<i class="material-icons">open_in_new</i>'})|raw }}
                         </span>
-                      </div>
+                      </div> #}
                     </div>
                     <div class="row hide">
                       <div class="col-md-12">

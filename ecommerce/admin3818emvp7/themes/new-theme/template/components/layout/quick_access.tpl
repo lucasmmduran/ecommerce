@@ -1,6 +1,7 @@
 {* Quick access *}
 <div class="dropdown quick-accesses">
-  <button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="quick_select">
+    &nbsp; &nbsp; 
+  {*<button class="btn btn-link btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="quick_select">
     {l s='Quick Access' d='Admin.Navigation.Header'}
   </button>
   <div class="dropdown-menu">
@@ -48,5 +49,5 @@
       <i class="material-icons">settings</i>
       {l s='Manage your quick accesses' d='Admin.Navigation.Header'}
     </a>
-  </div>
+  </div>*}
 </div>

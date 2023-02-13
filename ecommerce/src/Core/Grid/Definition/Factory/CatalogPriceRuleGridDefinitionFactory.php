@@ -110,12 +110,12 @@ final class CatalogPriceRuleGridDefinitionFactory extends AbstractGridDefinition
                 'field' => 'currency',
             ])
             )
-            ->add((new DataColumn('country'))
+            /* ->add((new DataColumn('country'))
             ->setName($this->trans('Country', [], 'Admin.Global'))
             ->setOptions([
                 'field' => 'country',
             ])
-            )
+            ) */
             ->add((new DataColumn('group_name'))
             ->setName($this->trans('Group', [], 'Admin.Global'))
             ->setOptions([
@@ -229,7 +229,7 @@ final class CatalogPriceRuleGridDefinitionFactory extends AbstractGridDefinition
             ])
             ->setAssociatedColumn('currency')
             )
-            ->add((new Filter('country', TextType::class))
+            /* ->add((new Filter('country', TextType::class))
             ->setTypeOptions([
                 'required' => false,
                 'attr' => [
@@ -237,7 +237,7 @@ final class CatalogPriceRuleGridDefinitionFactory extends AbstractGridDefinition
                 ],
             ])
             ->setAssociatedColumn('country')
-            )
+            ) */
             ->add((new Filter('group_name', TextType::class))
             ->setTypeOptions([
                 'required' => false,

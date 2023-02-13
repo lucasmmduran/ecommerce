@@ -234,7 +234,7 @@ class SpecificPriceController extends FrameworkBundleAdminController
             'sp_update_id' => $id,
             'sp_id_shop' => $price->id_shop,
             'sp_id_currency' => $price->id_currency,
-            'sp_id_country' => $price->id_country,
+            /* 'sp_id_country' => $price->id_country, */
             'sp_id_group' => $price->id_group,
             'sp_id_customer' => null,
             'sp_id_product_attribute' => $price->id_product_attribute,

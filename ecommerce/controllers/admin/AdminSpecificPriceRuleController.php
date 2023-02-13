@@ -81,20 +81,20 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                 'filter_key' => 'a!name',
                 'width' => 'auto',
             ],
-            'shop_name' => [
+            /* 'shop_name' => [
                 'title' => $this->trans('Shop', [], 'Admin.Global'),
                 'filter_key' => 's!name',
-            ],
+            ], */
             'id_currency' => [
                 'title' => $this->trans('Currency', [], 'Admin.Global'),
                 'align' => 'center',
                 'filter_key' => 'cul!name',
             ],
-            'country_name' => [
+            /* 'country_name' => [
                 'title' => $this->trans('Country', [], 'Admin.Global'),
                 'align' => 'center',
                 'filter_key' => 'cl!name',
-            ],
+            ], */
             'group_name' => [
                 'title' => $this->trans('Group', [], 'Admin.Global'),
                 'align' => 'center',
@@ -189,7 +189,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                     'maxlength' => 255,
                     'required' => true,
                 ],
-                [
+                /* [
                     'type' => 'select',
                     'label' => $this->trans('Shop', [], 'Admin.Global'),
                     'name' => 'shop_id',
@@ -200,7 +200,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                     ],
                     'condition' => Shop::isFeatureActive(),
                     'default_value' => Shop::getContextShopID(),
-                ],
+                ], */
                 [
                     'type' => 'select',
                     'label' => $this->trans('Currency', [], 'Admin.Global'),
@@ -211,7 +211,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                         'name' => 'name',
                     ],
                 ],
-                [
+                /* [
                     'type' => 'select',
                     'label' => $this->trans('Country', [], 'Admin.Global'),
                     'name' => 'id_country',
@@ -220,7 +220,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                         'id' => 'id_country',
                         'name' => 'name',
                     ],
-                ],
+                ], */
                 [
                     'type' => 'select',
                     'label' => $this->trans('Group', [], 'Admin.Global'),
