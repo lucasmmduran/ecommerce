@@ -81,10 +81,10 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                 'filter_key' => 'a!name',
                 'width' => 'auto',
             ],
-            'shop_name' => [
+            /* 'shop_name' => [
                 'title' => $this->trans('Shop', [], 'Admin.Global'),
                 'filter_key' => 's!name',
-            ],
+            ], */
             'id_currency' => [
                 'title' => $this->trans('Currency', [], 'Admin.Global'),
                 'align' => 'center',
@@ -189,7 +189,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                     'maxlength' => 255,
                     'required' => true,
                 ],
-                [
+                /* [
                     'type' => 'select',
                     'label' => $this->trans('Shop', [], 'Admin.Global'),
                     'name' => 'shop_id',
@@ -200,7 +200,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                     ],
                     'condition' => Shop::isFeatureActive(),
                     'default_value' => Shop::getContextShopID(),
-                ],
+                ], */
                 [
                     'type' => 'select',
                     'label' => $this->trans('Currency', [], 'Admin.Global'),
