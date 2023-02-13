@@ -90,11 +90,11 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                 'align' => 'center',
                 'filter_key' => 'cul!name',
             ],
-            'country_name' => [
+            /* 'country_name' => [
                 'title' => $this->trans('Country', [], 'Admin.Global'),
                 'align' => 'center',
                 'filter_key' => 'cl!name',
-            ],
+            ], */
             'group_name' => [
                 'title' => $this->trans('Group', [], 'Admin.Global'),
                 'align' => 'center',
@@ -211,7 +211,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                         'name' => 'name',
                     ],
                 ],
-                [
+                /* [
                     'type' => 'select',
                     'label' => $this->trans('Country', [], 'Admin.Global'),
                     'name' => 'id_country',
@@ -220,7 +220,7 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                         'id' => 'id_country',
                         'name' => 'name',
                     ],
-                ],
+                ], */
                 [
                     'type' => 'select',
                     'label' => $this->trans('Group', [], 'Admin.Global'),
