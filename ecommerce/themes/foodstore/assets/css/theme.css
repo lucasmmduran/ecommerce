@@ -12237,6 +12237,7 @@ body#checkout #gift_message {
 .product-accessories .product-description {
     background: none repeat scroll 0 0 #FFFFFF;
     display: block;
+    min-height: 60px;
 }
 
 .home_layout_menu .ets_mm_block_content > a {
