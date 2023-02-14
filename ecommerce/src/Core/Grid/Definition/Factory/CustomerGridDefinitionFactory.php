@@ -154,14 +154,14 @@ final class CustomerGridDefinitionFactory extends AbstractGridDefinitionFactory
                         'field' => 'email',
                     ])
             )
-            ->add(
+            /* ->add(
                 (new BadgeColumn('total_spent'))
                     ->setName($this->trans('Sales', [], 'Admin.Global'))
                     ->setOptions([
                         'field' => 'total_spent',
                         'empty_value' => '--',
                     ])
-            )
+            ) */
             ->add(
                 (new ToggleColumn('active'))
                     ->setName($this->trans('Enabled', [], 'Admin.Global'))
