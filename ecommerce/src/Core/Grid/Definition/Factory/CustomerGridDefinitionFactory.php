@@ -329,14 +329,14 @@ final class CustomerGridDefinitionFactory extends AbstractGridDefinitionFactory
                 (new Filter('active', YesAndNoChoiceType::class))
                     ->setAssociatedColumn('active')
             )
-            ->add(
+            /* ->add(
                 (new Filter('newsletter', YesAndNoChoiceType::class))
                     ->setAssociatedColumn('newsletter')
             )
             ->add(
                 (new Filter('optin', YesAndNoChoiceType::class))
                     ->setAssociatedColumn('optin')
-            )
+            ) */
             ->add(
                 (new Filter('date_add', DateRangeType::class))
                     ->setTypeOptions([
