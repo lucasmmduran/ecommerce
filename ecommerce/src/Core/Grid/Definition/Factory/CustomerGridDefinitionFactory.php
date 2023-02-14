@@ -172,7 +172,7 @@ final class CustomerGridDefinitionFactory extends AbstractGridDefinitionFactory
                         'route_param_name' => 'customerId',
                     ])
             )
-            ->add(
+            /* ->add(
                 (new ToggleColumn('newsletter'))
                     ->setName($this->trans('Newsletter', [], 'Admin.Global'))
                     ->setOptions([
@@ -191,7 +191,7 @@ final class CustomerGridDefinitionFactory extends AbstractGridDefinitionFactory
                         'route' => 'admin_customers_toggle_partner_offer_subscription',
                         'route_param_name' => 'customerId',
                     ])
-            )
+            ) */
             ->add(
                 (new DataColumn('date_add'))
                     ->setName($this->trans('Registration', [], 'Admin.Orderscustomers.Feature'))
