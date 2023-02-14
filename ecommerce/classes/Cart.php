@@ -2618,7 +2618,9 @@ class CartCore extends ObjectModel
 
         // Step 2 : Group product by warehouse
         $grouped_by_warehouse = [];
-
+        $carriers = Carrier::getCarriers(1);
+//var_dump($carrier);
+//die;
         foreach ($product_list as &$product) {
             if (!isset($grouped_by_warehouse[$product['id_address_delivery']])) {
                 $grouped_by_warehouse[$product['id_address_delivery']] = [
@@ -2630,8 +2632,10 @@ class CartCore extends ObjectModel
             $product['carrier_list'] = [];
             $id_warehouse = 0;
             foreach ($warehouse_count_by_address[$product['id_address_delivery']] as $id_war => $val) {
+                
                 if (array_key_exists((int) $id_war, $product['warehouse_list'])) {
-                    $product['carrier_list'] = array_replace($product['carrier_list'], Carrier::getAvailableCarrierList(new Product($product['id_product']), $id_war, $product['id_address_delivery'], null, $this));
+                    //$product['carrier_list'] = array_replace($product['carrier_list'], Carrier::getAvailableCarrierList(new Product($product['id_product']), $id_war, $product['id_address_delivery'], null, $this));
+                    $product['carrier_list'] = array_replace($product['carrier_list'], Carrier::getCarriers(1));
                     if (!$id_warehouse) {
                         $id_warehouse = (int) $id_war;
                     }
@@ -2665,7 +2669,8 @@ class CartCore extends ObjectModel
             $grouped_by_warehouse[$product['id_address_delivery']][$key][$id_warehouse][] = $product;
         }
         unset($product);
-
+/* var_dump($product['carrier_list']);
+die; */
         // Step 3 : grouped product from grouped_by_warehouse by available carriers
         $grouped_by_carriers = [];
         foreach ($grouped_by_warehouse as $id_address_delivery => $products_in_stock_list) {
@@ -2680,10 +2685,12 @@ class CartCore extends ObjectModel
                     $grouped_by_carriers[$id_address_delivery][$key] = [];
                 }
                 foreach ($warehouse_list as $id_warehouse => $product_list) {
+                    
                     if (!isset($grouped_by_carriers[$id_address_delivery][$key][$id_warehouse])) {
                         $grouped_by_carriers[$id_address_delivery][$key][$id_warehouse] = [];
                     }
                     foreach ($product_list as $product) {
+                        
                         $package_carriers_key = implode(',', $product['carrier_list']);
 
                         if (!isset($grouped_by_carriers[$id_address_delivery][$key][$id_warehouse][$package_carriers_key])) {
@@ -2774,9 +2781,10 @@ class CartCore extends ObjectModel
                 }
             }
         }
-
+        $final_package_list['carrier_list'] = $carriers;
         static::$cachePackageList[$cache_key] = $final_package_list;
-
+/* var_dump($final_package_list);
+die; */
         return $final_package_list;
     }
 
@@ -2840,11 +2848,13 @@ class CartCore extends ObjectModel
         if (isset(static::$cacheDeliveryOptionList[$this->id]) && !$flush) {
             return static::$cacheDeliveryOptionList[$this->id];
         }
-
+        
         $delivery_option_list = [];
         $carriers_price = [];
         $carrier_collection = [];
         $package_list = $this->getPackageList($flush);
+        
+        
 
         // Foreach addresses
         foreach ($package_list as $id_address => $packages) {
@@ -2863,10 +2873,11 @@ class CartCore extends ObjectModel
             } else {
                 $country = $default_country;
             }
-
+            
             // Foreach packages, get the carriers with best price, best position and best grade
             foreach ($packages as $id_package => $package) {
                 // No carriers available
+                
                 if (count($packages) == 1 && count($package['carrier_list']) == 1 && current($package['carrier_list']) == 0) {
                     $cache[$this->id] = [];
 
@@ -3065,6 +3076,7 @@ class CartCore extends ObjectModel
         //    - Set the carrier list
         //    - Calculate the price
         //    - Calculate the average position
+        
         foreach ($delivery_option_list as $id_address => $delivery_option) {
             foreach ($delivery_option as $key => $value) {
                 $total_price_with_tax = 0;
@@ -3101,7 +3113,7 @@ class CartCore extends ObjectModel
         }
 
         static::$cacheDeliveryOptionList[$this->id] = $delivery_option_list;
-
+        
         return static::$cacheDeliveryOptionList[$this->id];
     }
 
