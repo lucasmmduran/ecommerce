@@ -41,7 +41,7 @@ class Ets_megamenu extends Module
 		$this->secure_key = Tools::encrypt($this->name);        
 		$this->bootstrap = true;
 		parent::__construct();
-        $this->displayName = $this->l('Mega Menu PRO');
+        $this->displayName = $this->l('Menu de la tienda');
 		$this->description = $this->l('Visual drag and drop mega menu builder');
 		$this->ps_versions_compliancy = array('min' => '1.6.0.0', 'max' => _PS_VERSION_);
         $this->translates();

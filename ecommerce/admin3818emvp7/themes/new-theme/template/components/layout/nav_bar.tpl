@@ -30,13 +30,16 @@
 
     <div class="nav-bar-overflow">
         <ul class="main-menu{if $collapse_menu} sidebar-closed{/if}">
+
             {foreach $tabs as $tabmenu}
                 {if $tabmenu.name == "smw-custom"}
                     {$hrefCustom = $tabmenu.href|escape:'html':'UTF-8'}
+                    {$iconSmw = $tabmenu.icon}
+                    {$classSmw = $tabmenu.icon-class|escape:'html':'UTF-8'}
                     <li class="link-levelone" id="tab-ets">
                         <a href="{$hrefCustom}" class="link" >
-                            <i class="material-icons airplay">&#xe055;</i>
-                            <span>Configurar Slider</span>
+                            <i class="material-icons mi-{$classSmw}">{$iconSmw}</i>
+                            <span>{$tabmenu.title}</span>
                         </a>
                     </li>
                 {/if}

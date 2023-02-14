@@ -2041,10 +2041,23 @@ class AdminControllerCore extends Controller
 
         // Shop::initialize() in config.php may empty $this->context->shop->virtual_uri so using a new shop instance for getBaseUrl()
         $this->context->shop = new Shop((int) $this->context->shop->id);
+
         array_push($tabs,[
             "href" => $this->context->link->getAdminLink('AdminModules', true).'&configure=ets_multilayerslider',
-            "name" => "smw-custom"
+            "name" => "smw-custom",
+            "title" => "Cofigurar Slider",
+            "icon" => "&#xe055;",
+            "icon-class" => "airplay"
+
         ]);
+        array_push($tabs,[
+            "href" => $this->context->link->getAdminLink('AdminModules', true).'&configure=ets_megamenu',
+            "name" => "smw-custom",
+            "title" => "Configurar Menu Tienda",
+            "icon" => "&#xe00c;",
+            "icon-class" => "align_vertical_top"
+        ]);
+
         $this->context->smarty->assign([
             'img_dir' => _PS_IMG_,
             'iso' => $this->context->language->iso_code,
@@ -2070,8 +2083,7 @@ class AdminControllerCore extends Controller
             'default_language' => (int) Configuration::get('PS_LANG_DEFAULT'),
             'display_addons_connection' => Tab::checkTabRights(Tab::getIdFromClassName('AdminModulesController')),
         ]);
-        /* var_dump($tabs);
-die; */
+        
     }
 
     private function getNotificationTip($type)
