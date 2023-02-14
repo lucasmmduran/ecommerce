@@ -30,6 +30,12 @@
 
   <div class="nav-bar-overflow">
       <ul class="main-menu{if $collapse_menu} sidebar-closed{/if}">
+      <li class="link-levelone{if $level_1.current} link-active{/if}" id="tab-{$level_1.class_name}" data-submenu="{$level_1.id_tab}">
+        <a href="{url entity='module' name='ets_multilayerslider' controller='AdminModules'}" class="link" >
+            <i class="material-icons airplay">&#xe055;</i>
+        <span>Configurar Slider</span>
+            </a>
+        </li>
       {foreach $tabs as $level1}
         {if $level1.active}
 
