@@ -28,15 +28,23 @@
     <i class="material-icons">chevron_left</i>
   </span>
 
-  <div class="nav-bar-overflow">
-      <ul class="main-menu{if $collapse_menu} sidebar-closed{/if}">
-      {*<li class="link-levelone{if $level_1.current} link-active{/if}" id="tab-{$level_1.class_name}" data-submenu="{$level_1.id_tab}">
-        <a href="{url entity='module' name='ets_multilayerslider' controller='AdminModules'}" class="link" >
-            <i class="material-icons airplay">&#xe055;</i>
-        <span>Configurar Slider</span>
-            </a>
-        </li>*}
+    <div class="nav-bar-overflow">
+        <ul class="main-menu{if $collapse_menu} sidebar-closed{/if}">
+            {foreach $tabs as $tabmenu}
+                {if $tabmenu.name == "smw-custom"}
+                    {$hrefCustom = $tabmenu.href|escape:'html':'UTF-8'}
+                    <li class="link-levelone" id="tab-ets">
+                        <a href="{$hrefCustom}" class="link" >
+                            <i class="material-icons airplay">&#xe055;</i>
+                            <span>Configurar Slider</span>
+                        </a>
+                    </li>
+                {/if}
+            {/foreach}
+
       {foreach $tabs as $level1}
+        
+        
         {if $level1.active}
 
           {$level1Href = $level1.href|escape:'html':'UTF-8'}
