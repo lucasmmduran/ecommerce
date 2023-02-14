@@ -38,7 +38,7 @@ class Ets_multilayerslider extends Module
 		$this->secure_key = Tools::encrypt($this->name);        
 		$this->bootstrap = true;
 		parent::__construct();        
-        $this->displayName = $this->l('Multi-layer slider PRO');
+        $this->displayName = $this->l('Slider');
 		$this->description = $this->l('Visual drag and drop home page slideshow builder');
 		$this->ps_versions_compliancy = array('min' => '1.6.0.0', 'max' => _PS_VERSION_);
         $this->translates();   

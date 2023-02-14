@@ -18,7 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<style>
+{*<style>
     .ets_multilayerslider{
         min-height:800px;
     }
@@ -35,4 +35,4 @@
 </script> 
 <div id="ph_preview_template_html">
     <iframe src="{$url_iframe|escape:'html':'UTF-8'}" style="background: #ffffff ; border : 1px solid #ccc;width:100%;height:0;opacity:0;border-radius:5px" onload="phProductFeedResizeIframe(this)"></iframe>
-</div>
+</div>*}

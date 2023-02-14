@@ -34,16 +34,16 @@
 <div class="bootstrap">
   <div class="page-head {if isset($current_tab_level) && $current_tab_level == 3}with-tabs{/if}">
     <div class="wrapper clearfix">
-    {block name=pageBreadcrumb}
+    {*{block name=pageBreadcrumb}
       <ul class="breadcrumb page-breadcrumb">
-        {* Container *}
+        Container
         {if $breadcrumbs2.container.name != ''}
           <li class="breadcrumb-container">
             {$breadcrumbs2.container.name|escape}
           </li>
         {/if}
 
-        {* Current Tab *}
+        Current Tab
         {if $breadcrumbs2.tab.name != '' && $breadcrumbs2.container.name != $breadcrumbs2.tab.name}
           <li class="breadcrumb-current">
             {if $breadcrumbs2.tab.href != ''}<a href="{$breadcrumbs2.tab.href|escape}">{/if}
@@ -51,17 +51,8 @@
               {if $breadcrumbs2.tab.href != ''}</a>{/if}
           </li>
         {/if}
-
-        {* Action *}
-        {*if $breadcrumbs2.action.name != ''}
-                  <li class="breadcrumb-action">
-                      {if $breadcrumbs2.action.href != ''}<a href="{$breadcrumbs2.action.href|escape}">{/if}
-                      {$breadcrumbs2.action.name|escape}
-                      {if $breadcrumbs2.action.href != ''}</a>{/if}
-                  </li>
-              {/if*}
       </ul>
-    {/block}
+    {/block}*}
 
     {block name=pageTitle}
       <h1 class="page-title">
@@ -73,69 +64,7 @@
       </h1>
     {/block}
 
-    {block name=toolbarBox}
-      <div class="page-bar toolbarBox">
-        <div class="btn-toolbar">
-          <a href="#" class="toolbar_btn dropdown-toolbar navbar-toggle" data-toggle="collapse"
-             data-target="#toolbar-nav"><i class="process-icon-dropdown"></i>
-            <div>{l s='Menu' d='Admin.Navigation.Menu'}</div>
-          </a>
-          <ul id="toolbar-nav" class="nav nav-pills pull-right collapse navbar-collapse">
-            {hook h='displayDashboardToolbarTopMenu'}
-            {foreach from=$toolbar_btn item=btn key=k}
-              {if $k != 'back' && $k != 'modules-list'}
-                {if $table != 'configuration'}
-                    <li>
-                    <a id="page-header-desc-{$table}-{if isset($btn.imgclass)}{$btn.imgclass|escape}{else}{$k}{/if}"
-                        class="toolbar_btn {if isset($btn.target) && $btn.target} _blank{/if} pointer"{if isset($btn.href)} href="{$btn.href|escape}"{/if}
-                        title="{if isset($btn.help)}{$btn.help}{else}{$btn.desc|escape}{/if}"{if isset($btn.js) && $btn.js} onclick="{$btn.js}"{/if}{if isset($btn.modal_target) && $btn.modal_target} data-target="{$btn.modal_target}" data-toggle="modal"{/if}{if isset($btn.help)} data-toggle="tooltip" data-placement="bottom"{/if}>
-                        <i
-                        class="{if isset($btn.icon)}{$btn.icon|escape}{else}process-icon-{if isset($btn.imgclass)}{$btn.imgclass|escape}{else}{$k}{/if}{/if}{if isset($btn.class)} {$btn.class|escape}{/if}"></i>
-                        <div{if isset($btn.force_desc) && $btn.force_desc == true } class="locked"{/if}>{$btn.desc|escape}</div>
-                    </a>
-                    </li>
-                {/if}
-              {/if}
-            {/foreach}
-            {if isset($toolbar_btn['modules-list'])}
-              <li>
-                <a
-                  id="page-header-desc-{$table}-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}"
-                  class="toolbar_btn{if isset($toolbar_btn['modules-list'].class)} {$toolbar_btn['modules-list'].class}{/if}{if isset($toolbar_btn['modules-list'].target) && $toolbar_btn['modules-list'].target} _blank{/if}"
-                  {if isset($toolbar_btn['modules-list'].href)}href="{$toolbar_btn['modules-list'].href}"{/if}
-                  title="{$toolbar_btn['modules-list'].desc}"{if isset($toolbar_btn['modules-list'].js) && $toolbar_btn['modules-list'].js} onclick="{$toolbar_btn['modules-list'].js}"{/if}>
-                  <i
-                    class="{if isset($toolbar_btn['modules-list'].icon)}{$toolbar_btn['modules-list'].icon}{else}process-icon-{if isset($toolbar_btn['modules-list'].imgclass)}{$toolbar_btn['modules-list'].imgclass}{else}modules-list{/if}{/if}"></i>
-                  <div{if isset($toolbar_btn['modules-list'].force_desc) && $toolbar_btn['modules-list'].force_desc == true } class="locked"{/if}>{$toolbar_btn['modules-list'].desc}</div>
-                </a>
-              </li>
-            {/if}
-            
-          </ul>
-          {if (isset($tab_modules_open) && $tab_modules_open) || isset($tab_modules_list)}
-            <script type="text/javascript">
-              //<![CDATA[
-              var modules_list_loaded = false;
-              {if isset($tab_modules_open) && $tab_modules_open}
-              $(function () {
-                $('#modules_list_container').modal('show');
-                openModulesList();
-
-              });
-              {/if}
-              {if isset($tab_modules_list)}
-              $('.process-icon-modules-list').parent('a').unbind().bind('click', function (event) {
-                event.preventDefault();
-                $('#modules_list_container').modal('show');
-                openModulesList();
-              });
-              {/if}
-              //]]>
-            </script>
-          {/if}
-        </div>
-      </div>
-    {/block}
+    
 
     </div>
 
