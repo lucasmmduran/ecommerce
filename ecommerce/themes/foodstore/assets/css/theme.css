@@ -70,7 +70,7 @@ body {
 }
 
 .menu_and_cattree {
-    margin-top: 38px;
+    /* margin-top: 38px; */
     width: 100%;
     position:relative;
 }
@@ -16691,7 +16691,7 @@ body#index .maincontent_v1 .mls_nav > div.mls_next {
 }
 
 #header .logo {
-    max-width: 100%;
+    max-width: 50%;
 }
 
 #header .header-nav a.dropdown-item {
@@ -16949,7 +16949,7 @@ body#index .maincontent_v1 .mls_nav > div.mls_next {
 }
 
 #header .header-top {
-    padding-top: 31px;
+    /* padding-top: 31px; */
     width: 100%;
 }
 
@@ -17104,7 +17104,7 @@ body#index .maincontent_v1 .mls_nav > div.mls_next {
 #footer {
     background-color: #2e2e2e;
     margin-top: 60px;
-    padding-top: 2.5rem;
+    /* padding-top: 2.5rem; */
     color: #e3e3e3;
 	position:relative;
 }
