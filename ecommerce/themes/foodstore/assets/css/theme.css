@@ -17121,10 +17121,10 @@ body#index .maincontent_v1 .mls_nav > div.mls_next {
 }
 
 .footer_logo{
-    display: inline-block;
+    /* display: inline-block; */
     text-align: center;
-    width: 100%;
-    margin-bottom: 21px;
+    /* width: 100%; */
+    margin-bottom: 5px;
 }
 .footer_logo img{
     display: inline-block;

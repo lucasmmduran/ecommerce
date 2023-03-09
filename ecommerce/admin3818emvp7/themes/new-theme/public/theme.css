@@ -19323,9 +19323,11 @@ a.tags-input .tag.focus {
   font-size: 1.313rem;
 }
 .main-header > .logo {
-    width: 257px;
-  height: 6px;
-  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png);
+  width: 186px;
+  height: 32px;
+  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png) center no-repeat;
+  background-size: contain;
+  margin: 4px 0px;
   /* width: 13.13rem;
   height: 100%;
   background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png) no-repeat center left; */

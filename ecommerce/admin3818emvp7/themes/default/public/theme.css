@@ -14111,9 +14111,11 @@ body.display-modal #main {
   vertical-align: middle;
 }
 #header_infos #header_logo {
-    width: 257px;
-  height: 6px;
-  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png);
+  width: 186px;
+  height: 32px;
+  background: url(fbc2a379fdad6d5a1b10c881644bc5dd.png) center no-repeat;
+  background-size: contain;
+  margin: 4px 0px;
   /* width: 210.08px;
   width: 13.13rem;
   height: 100%;
@@ -19745,10 +19747,14 @@ a.link-social:hover {
   margin: 0 auto;
 }
 .bootstrap #login-header {
-  padding-top: 22px;
+  padding: 15px 0;
   background-color: #7B9E3E;
   text-align: center!important;
 }
+.bootstrap #login-icon {
+  text-align: center!important;
+}
+
 .bootstrap #login-header h1,
 .bootstrap #login-header h4 {
   padding: 0;

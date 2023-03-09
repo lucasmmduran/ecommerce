@@ -1,5 +1,5 @@
 <div id="login-header">
-    <img id="logo" src="{$img_dir}logo-almacen-campesino.png" width="150px" height="150px" alt="Secretaria" />
+    <img id="logo" src="{$img_dir}logo-secretaria.png" width="130px" height="64px" alt="Secretaria" />
 </div>
 <div id="login-panel">
     
@@ -29,6 +29,9 @@
         {/if}
         <div class="flipper">
             <div class="front front_login panel" {if isset($reset_token) && isset($id_employee)}style="display:none;"{/if}>
+                <div id="login-icon">
+                    <img id="logo" src="{$img_dir}logo-almacen-campesino.png" width="100px" height="100px" alt="Almacen Campesino" />
+                </div>
                 <h2 id="shop_name">Ingresá a tu cuenta</h2>
                 {if !isset($wrong_folder_name) && !isset($wrong_install_name)}
                 <form action="#" id="login_form" method="post">

@@ -41,6 +41,11 @@
   <div class="footer_bottom">
       <div class="container">
           <div class="row">
+                <div class="col-md-4 footer_logo">
+                    {* <div> *}
+                        <img src="{$urls.base_url|escape:'html':'UTF-8'}/img/logo-secretaria-grande.png" width="148px" height="60px" alt="Secretaria"  />
+                    {* </div> *}
+                </div>
               <div class="col-md-6 coppyright">
                   <div class="ybc_coppyright">
                      {if isset($tc_config.YBC_TC_COPYRIGHT_TEXT) && $tc_config.YBC_TC_COPYRIGHT_TEXT}
