@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
     <name>ets_multilayerslider</name>
-    <displayName><![CDATA[Multi-layer slider PRO]]></displayName>
+    <displayName><![CDATA[Diapositiva]]></displayName>
     <version><![CDATA[1.0.1]]></version>
-    <description><![CDATA[Visual drag and drop home page slideshow builder]]></description>
+    <description><![CDATA[Generador visual de presentaciones de diapositivas de la p&aacute;gina de inicio de arrastrar y soltar]]></description>
     <author><![CDATA[ETS-Soft]]></author>
     <tab><![CDATA[front_office_features]]></tab>
     <is_configurable>1</is_configurable>

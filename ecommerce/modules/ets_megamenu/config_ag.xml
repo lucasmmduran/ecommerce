@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
     <name>ets_megamenu</name>
-    <displayName><![CDATA[Menu Mega]]></displayName>
+    <displayName><![CDATA[Menu de la tienda]]></displayName>
     <version><![CDATA[1.0.1]]></version>
     <description><![CDATA[Herramienta visual para armar menus arrastrando y soltando]]></description>
     <author><![CDATA[ETS-Soft]]></author>
