@@ -69,6 +69,10 @@ body {
 
 }
 
+.maincontent_v1 {
+    min-height: 50vh;
+}
+
 .menu_and_cattree {
     /* margin-top: 38px; */
     width: 100%;
