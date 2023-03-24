@@ -123,7 +123,7 @@ class CheckoutDeliveryStepCore extends AbstractCheckoutStep
     public function handleRequest(array $requestParams = [])
     {
         if(isset($requestParams['confirmDeliveryOption'])){
-            $deliveryOptions = Carrier::getCarriers(1);//$this->getCheckoutSession()->getDeliveryOptions();
+            $deliveryOptions = $this->getCheckoutSession()->getDeliveryOptions();//Carrier::getCarriers(1);
             //var_dump($this->getCheckoutSession()->getSelectedDeliveryOption());
             //die;
             $this->setNextStepAsCurrent();
