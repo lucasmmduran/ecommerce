@@ -82,11 +82,16 @@
         </div>
         {% include '@PrestaShop/Admin/Sell/Order/Order/Blocks/View/details.html.twig' %}
 
-        {{ renderhook('displayAdminOrderMain', {'id_order': orderForViewing.id}) }}
-        {% include '@PrestaShop/Admin/Sell/Order/Order/Blocks/View/payments.html.twig' %}
-
-        {{ renderhook('displayAdminOrderMainBottom', {'id_order': orderForViewing.id}) }}
+        
       </div>
+    </div>
+    <div class="product-row row"> 
+        <div class="col-md-12 left-column">
+          {{ renderhook('displayAdminOrderMain', {'id_order': orderForViewing.id}) }}
+            {% include '@PrestaShop/Admin/Sell/Order/Order/Blocks/View/payments.html.twig' %}
+
+            {{ renderhook('displayAdminOrderMainBottom', {'id_order': orderForViewing.id}) }}
+        </div>
     </div>
 
     {% if orderForViewing.sources.sources is not empty %}

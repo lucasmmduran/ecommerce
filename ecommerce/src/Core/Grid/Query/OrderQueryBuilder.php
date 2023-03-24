@@ -134,7 +134,7 @@ final class OrderQueryBuilder implements DoctrineQueryBuilderInterface
             ->from($this->dbPrefix . 'orders', 'o')
             ->innerJoin('o', $this->dbPrefix . 'customer', 'cu', 'o.id_customer = cu.id_customer')
             ->leftJoin('o', $this->dbPrefix . 'currency', 'cur', 'o.id_currency = cur.id_currency')
-            ->leftJoin('o', $this->dbPrefix . 'address', 'a', 'o.id_address_delivery = a.id_address')
+            ->innerJoin('o', $this->dbPrefix . 'address', 'a', 'o.id_address_delivery = a.id_address')
             ->leftJoin('a', $this->dbPrefix . 'country', 'c', 'a.id_country = c.id_country')
             ->leftJoin(
                 'c',
