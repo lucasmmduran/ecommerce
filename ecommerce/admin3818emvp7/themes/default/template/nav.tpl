@@ -6,7 +6,7 @@
 
   <div class="nav-bar-overflow">
       <ul class="main-menu{if $collapse_menu} sidebar-closed{/if}">
-      {foreach $tabs as $tabmenu}
+      {*{foreach $tabs as $tabmenu}
                 {if $tabmenu.name == "smw-custom"}
                     {$hrefCustom = $tabmenu.href|escape:'html':'UTF-8'}
                     {$iconSmw = $tabmenu.icon}
@@ -18,7 +18,7 @@
                         </a>
                     </li>
                 {/if}
-            {/foreach}
+            {/foreach}*}
       {foreach $tabs as $level_1}
         {if $level_1.active}
           {* Dashboard exception *}
@@ -29,15 +29,31 @@
                 <span>{if $level_1.name eq ''}{$level_1.class_name|escape:'html':'UTF-8'}{else}{$level_1.name|escape:'html':'UTF-8'}{/if}</span>
               </a>
             </li>
+
           {else}
             <li class="category-title{if $level_1.current} link-active{/if}" id="tab-{$level_1.class_name}" data-submenu="{$level_1.id_tab}">
               <span class="title">
                 <span>{if $level_1.name eq ''}{$level_1.class_name|escape:'html':'UTF-8'}{else}{$level_1.name|escape:'html':'UTF-8'}{/if}</span>
               </span>
             </li>
-
+            {if $level_1.id_tab == 80}
+                    {foreach $tabs as $tabmenu}
+                        {if $tabmenu.name == "smw-custom"}
+                            {$hrefCustom = $tabmenu.href|escape:'html':'UTF-8'}
+                            {$iconSmw = $tabmenu.icon}
+                            {$classSmw = $tabmenu.icon-class|escape:'html':'UTF-8'}
+                            <li class="link-levelone" id="tab-ets">
+                                <a href="{$hrefCustom}" class="link" >
+                                    <i class="material-icons mi-{$classSmw}">{$iconSmw}</i>
+                                    <span>{$tabmenu.title}</span>
+                                </a>
+                            </li>
+                        {/if}
+                    {/foreach}
+                {/if}
             {if $level_1.sub_tabs|@count}
               {foreach $level_1.sub_tabs as $level_2}
+                
                 {if $level_2.active}
                   {assign var="mainTabClass" value=''}
 
