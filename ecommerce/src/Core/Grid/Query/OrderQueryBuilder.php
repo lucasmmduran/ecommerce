@@ -132,11 +132,11 @@ final class OrderQueryBuilder implements DoctrineQueryBuilderInterface
         $qb = $this->connection
             ->createQueryBuilder()
             ->from($this->dbPrefix . 'orders', 'o')
-            ->leftJoin('o', $this->dbPrefix . 'customer', 'cu', 'o.id_customer = cu.id_customer')
+            ->innerJoin('o', $this->dbPrefix . 'customer', 'cu', 'o.id_customer = cu.id_customer')
             ->leftJoin('o', $this->dbPrefix . 'currency', 'cur', 'o.id_currency = cur.id_currency')
-            ->innerJoin('o', $this->dbPrefix . 'address', 'a', 'o.id_address_delivery = a.id_address')
-            ->innerJoin('a', $this->dbPrefix . 'country', 'c', 'a.id_country = c.id_country')
-            ->innerJoin(
+            ->leftJoin('o', $this->dbPrefix . 'address', 'a', 'o.id_address_delivery = a.id_address')
+            ->leftJoin('a', $this->dbPrefix . 'country', 'c', 'a.id_country = c.id_country')
+            ->leftJoin(
                 'c',
                 $this->dbPrefix . 'country_lang',
                 'cl',
@@ -175,6 +175,9 @@ final class OrderQueryBuilder implements DoctrineQueryBuilderInterface
             'date_add' => 'o.`date_add`',
         ];
 
+
+        /* var_dump($filters);
+        die('::::::::::'); */
         foreach ($filters as $filterName => $filterValue) {
             if (isset($strictComparisonFilters[$filterName])) {
                 $alias = $strictComparisonFilters[$filterName];
@@ -223,6 +226,8 @@ final class OrderQueryBuilder implements DoctrineQueryBuilderInterface
                 continue;
             }
         }
+
+        
 
         return $qb;
     }

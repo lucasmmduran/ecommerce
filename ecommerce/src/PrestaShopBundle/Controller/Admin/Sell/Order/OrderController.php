@@ -141,8 +141,8 @@ class OrderController extends FrameworkBundleAdminController
     {
         $orderKpiFactory = $this->get('prestashop.core.kpi_row.factory.orders');
         $orderGrid = $this->get('prestashop.core.grid.factory.order')->getGrid($filters);
-        //var_dump($filters);
-//die(":::::::::::::::::::::::::::::::::::::::::::::::");
+        /* var_dump($filters);
+        die(":::::::::::::::::::::::::::::::::::::::::::::::"); */
         $changeOrderStatusesForm = $this->createForm(ChangeOrdersStatusType::class);
 
         return $this->render(
