@@ -211,22 +211,12 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                         'name' => 'name',
                     ],
                 ],
-                /* [
-                    'type' => 'select',
-                    'label' => $this->trans('Country', [], 'Admin.Global'),
-                    'name' => 'id_country',
-                    'options' => [
-                        'query' => array_merge([0 => ['id_country' => 0, 'name' => $this->trans('All countries', [], 'Admin.Global')]], Country::getCountries((int) $this->context->language->id)),
-                        'id' => 'id_country',
-                        'name' => 'name',
-                    ],
-                ], */
                 [
                     'type' => 'select',
                     'label' => $this->trans('Group', [], 'Admin.Global'),
                     'name' => 'id_group',
                     'options' => [
-                        'query' => array_merge([0 => ['id_group' => 0, 'name' => $this->trans('All groups', [], 'Admin.Global')]], Group::getGroups((int) $this->context->language->id)),
+                        'query' => array_merge([0 => ['id_group' => 0, 'name' => $this->trans('Todos', [], 'Admin.Global')]], Group::getGroups((int) $this->context->language->id)),
                         'id' => 'id_group',
                         'name' => 'name',
                     ],
@@ -301,6 +291,16 @@ class AdminSpecificPriceRuleControllerCore extends AdminController
                     'label' => $this->trans('Reduction', [], 'Admin.Catalog.Feature'),
                     'name' => 'reduction',
                     'required' => true,
+                ],
+                [
+                    'type' => 'select',
+                    'label' => '',
+                    'name' => 'id_country',
+                    'options' => [
+                        'query' => array_merge([0 => ['id_country' => 0, 'name' => $this->trans('All countries', [], 'Admin.Global')]], Country::getCountries((int) $this->context->language->id)),
+                        'id' => 'id_country',
+                        'name' => 'name',
+                    ],
                 ],
             ],
             'submit' => [

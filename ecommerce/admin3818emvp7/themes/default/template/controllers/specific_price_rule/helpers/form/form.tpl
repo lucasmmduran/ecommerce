@@ -209,6 +209,8 @@ function appendConditionToGroup(html)
 }
 
 $(document).ready(function() {
+    $('#id_country').val(44);
+    $('#id_country').hide();
 	$('#leave_bprice_on').click(function() {
 		if (this.checked)
 			$('#price').attr('disabled', 'disabled');
