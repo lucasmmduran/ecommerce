@@ -133,6 +133,7 @@ class AdminCartsControllerCore extends AdminController
                 'icon' => 'icon-trash',
             ],
         ];
+        
     }
 
     public function initPageHeaderToolbar()
@@ -150,6 +151,7 @@ class AdminCartsControllerCore extends AdminController
 
     public function renderKpis()
     {
+        return null;
         $time = time();
         $kpis = [];
 
@@ -222,6 +224,7 @@ class AdminCartsControllerCore extends AdminController
 
     public function renderView()
     {
+        
         /** @var Cart $cart */
         if (!($cart = $this->loadObject(true))) {
             return;
@@ -295,7 +298,7 @@ class AdminCartsControllerCore extends AdminController
         $helper->subtitle = $this->trans('Cart #%ID%', ['%ID%' => $cart->id], 'Admin.Orderscustomers.Feature');
         $helper->value = $this->context->getCurrentLocale()->formatPrice($total_price, $currency->iso_code);
         $kpi = $helper->generate();
-
+        
         $this->tpl_view_vars = [
             'kpi' => $kpi,
             'products' => $products,
