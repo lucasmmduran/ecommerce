@@ -2888,6 +2888,10 @@ die; */
 
                 // Get all common carriers for each packages to the same address
                 if (null === $common_carriers) {
+                        if(!isset($package['carrier_list'])){
+                            return;
+                        }
+
                     $common_carriers = $package['carrier_list'];
                 } else {
                     $common_carriers = array_intersect($common_carriers, $package['carrier_list']);
@@ -3434,28 +3438,32 @@ die; */
 
         // No delivery option selected or delivery option selected is not valid, get the better for all options
         $delivery_option = [];
-        foreach ($delivery_option_list as $id_address => $options) {
-            foreach ($options as $key => $option) {
-                if (Configuration::get('PS_CARRIER_DEFAULT') == -1 && $option['is_best_price']) {
-                    $delivery_option[$id_address] = $key;
+        //var_dump($delivery_option_list);
+        if($delivery_option_list){
+            foreach ($delivery_option_list as $id_address => $options) {
+                foreach ($options as $key => $option) {
+                    if (Configuration::get('PS_CARRIER_DEFAULT') == -1 && $option['is_best_price']) {
+                        $delivery_option[$id_address] = $key;
 
-                    break;
-                } elseif (Configuration::get('PS_CARRIER_DEFAULT') == -2 && $option['is_best_grade']) {
-                    $delivery_option[$id_address] = $key;
+                        break;
+                    } elseif (Configuration::get('PS_CARRIER_DEFAULT') == -2 && $option['is_best_grade']) {
+                        $delivery_option[$id_address] = $key;
 
-                    break;
-                } elseif ($option['unique_carrier'] && in_array(Configuration::get('PS_CARRIER_DEFAULT'), array_keys($option['carrier_list']))) {
-                    $delivery_option[$id_address] = $key;
+                        break;
+                    } elseif ($option['unique_carrier'] && in_array(Configuration::get('PS_CARRIER_DEFAULT'), array_keys($option['carrier_list']))) {
+                        $delivery_option[$id_address] = $key;
 
-                    break;
+                        break;
+                    }
+                }
+
+                reset($options);
+                if (!isset($delivery_option[$id_address])) {
+                    $delivery_option[$id_address] = key($options);
                 }
             }
-
-            reset($options);
-            if (!isset($delivery_option[$id_address])) {
-                $delivery_option[$id_address] = key($options);
-            }
         }
+        
 
         static::$cacheDeliveryOption[$cache_id] = $delivery_option;
 
