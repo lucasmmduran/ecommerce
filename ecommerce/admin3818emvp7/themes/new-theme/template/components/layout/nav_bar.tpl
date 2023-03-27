@@ -31,7 +31,7 @@
     <div class="nav-bar-overflow">
         <ul class="main-menu{if $collapse_menu} sidebar-closed{/if}">
 
-            {foreach $tabs as $tabmenu}
+            {*{foreach $tabs as $tabmenu}
                 {if $tabmenu.name == "smw-custom"}
                     {$hrefCustom = $tabmenu.href|escape:'html':'UTF-8'}
                     {$iconSmw = $tabmenu.icon}
@@ -43,7 +43,7 @@
                         </a>
                     </li>
                 {/if}
-            {/foreach}
+            {/foreach}*}
 
       {foreach $tabs as $level1}
         
@@ -73,8 +73,27 @@
             <li class="category-title{if $level1.current} link-active{/if}" data-submenu="{$level1.id_tab}" id="tab-{$level1.class_name}">
                 <span class="title">{$level1Name}</span>
             </li>
-
+                
+                {if $level1.id_tab == 80}
+                    asdasasdasdas
+                    {foreach $tabs as $tabmenu}
+                        {if $tabmenu.name == "smw-custom"}
+                            {$hrefCustom = $tabmenu.href|escape:'html':'UTF-8'}
+                            {$iconSmw = $tabmenu.icon}
+                            {$classSmw = $tabmenu.icon-class|escape:'html':'UTF-8'}
+                            <li class="link-levelone" id="tab-ets">
+                                <a href="{$hrefCustom}" class="link" >
+                                    <i class="material-icons mi-{$classSmw}">{$iconSmw}</i>
+                                    <span>{$tabmenu.title}</span>
+                                </a>
+                            </li>
+                        {/if}
+                    {/foreach}
+                {/if}
+                
               {foreach $level1.sub_tabs as $level2}
+
+            
                 {if $level2.active}
 
                   {$level2Href = $level2.href|escape:'html':'UTF-8'}

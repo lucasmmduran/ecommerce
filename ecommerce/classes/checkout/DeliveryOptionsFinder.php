@@ -78,12 +78,12 @@ class DeliveryOptionsFinderCore
         $display_taxes_label = (Configuration::get('PS_TAX') && !Configuration::get('AEUC_LABEL_TAX_INC_EXC'));
 
         $carriers_available = [];
-//var_dump($delivery_option_list);
-//die;
+        //var_dump($delivery_option_list);
+        //die;
         if (isset($delivery_option_list[$this->context->cart->id_address_delivery])) {
             foreach ($delivery_option_list[$this->context->cart->id_address_delivery] as $id_carriers_list => $carriers_list) {
                 //var_dump($carriers_list);
-//die;
+                //die;
                 foreach ($carriers_list as $carriers) {
                     if (is_array($carriers)) {
                         foreach ($carriers as $carrier) {

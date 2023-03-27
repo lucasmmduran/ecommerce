@@ -2042,6 +2042,30 @@ class AdminControllerCore extends Controller
         // Shop::initialize() in config.php may empty $this->context->shop->virtual_uri so using a new shop instance for getBaseUrl()
         $this->context->shop = new Shop((int) $this->context->shop->id);
 
+        /* foreach($tabs as $tab){
+            var_dump($tab);
+            die;
+            if($tab['id_tab'] == 80){
+                var_dump($tab['sub_tabs']);
+                die;
+                array_push($tab['sub_tabs'],[
+                    "href" => $this->context->link->getAdminLink('AdminModules', true).'&configure=ets_multilayerslider',
+                    "name" => "smw-custom",
+                    "title" => "Cofigurar Slider",
+                    "icon" => "&#xe055;",
+                    "icon-class" => "airplay"
+
+                ]);
+                array_push($tab['sub_tabs'],[
+                    "href" => $this->context->link->getAdminLink('AdminModules', true).'&configure=ets_megamenu',
+                    "name" => "smw-custom",
+                    "title" => "Configurar Menu Tienda",
+                    "icon" => "&#xe00c;",
+                    "icon-class" => "align_vertical_top"
+                ]);
+            }
+        } */
+
         array_push($tabs,[
             "href" => $this->context->link->getAdminLink('AdminModules', true).'&configure=ets_multilayerslider',
             "name" => "smw-custom",
@@ -2057,6 +2081,8 @@ class AdminControllerCore extends Controller
             "icon" => "&#xe00c;",
             "icon-class" => "align_vertical_top"
         ]);
+        /* var_dump($tabs);
+        die; */
 
         $this->context->smarty->assign([
             'img_dir' => _PS_IMG_,

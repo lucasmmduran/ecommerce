@@ -52,7 +52,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="form-group">
+	{* <div class="form-group">
 		<label for="id_manufacturer" class="control-label col-lg-3">{l s='Brand' d='Admin.Global'}</label>
 		<div class="col-lg-9">
 			<div class="col-lg-8">
@@ -137,7 +137,7 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</div> *}
 {if !$is_multishop}
 	<input type="hidden" name="id_shop" value="1" />
 {/if}
@@ -209,6 +209,8 @@ function appendConditionToGroup(html)
 }
 
 $(document).ready(function() {
+    $('#id_country').val(44);
+    $('#id_country').hide();
 	$('#leave_bprice_on').click(function() {
 		if (this.checked)
 			$('#price').attr('disabled', 'disabled');

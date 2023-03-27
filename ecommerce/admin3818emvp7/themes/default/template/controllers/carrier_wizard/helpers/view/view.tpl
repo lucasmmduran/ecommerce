@@ -52,7 +52,7 @@
 	</div>
 	<div class="col-sm-10">
 		<div id="carrier_wizard" class="panel swMain">
-			<ul class="steps nbr_steps_{$wizard_steps.steps|count}">
+			<ul class="steps nbr_steps_4">{* {$wizard_steps.steps|count}*}
 			{foreach from=$wizard_steps.steps key=step_nbr item=step}
 				<li>
 					<a href="#step-{$step_nbr + 1}">

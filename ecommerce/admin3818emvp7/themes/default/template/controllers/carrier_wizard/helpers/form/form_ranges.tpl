@@ -71,7 +71,7 @@
 					</tr>
 					<tr class="fees_all">
 						<td class="border_top border_bottom border_bold">
-							<span class="fees_all" {if $ranges|count == 0}style="display:none" {/if}>All</span>
+							<span class="fees_all" {if $ranges|count == 0}style="display:none" {/if}>Todos</span>
 						</td>
 						<td style="">
 							<input type="checkbox" onclick="checkAllZones(this);" class="form-control">

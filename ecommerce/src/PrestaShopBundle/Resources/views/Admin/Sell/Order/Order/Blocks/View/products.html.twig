@@ -210,7 +210,7 @@
         </div>
 
         <div class="col-md-12">
-          <p class="mb-0 mt-1 text-center text-muted">
+          {# <p class="mb-0 mt-1 text-center text-muted">
             <small>
               {{ 'For this customer group, prices are displayed as: [1]%tax_method%[/1]'|trans({
                 '%tax_method%': orderForViewing.taxMethod,
@@ -222,7 +222,7 @@
                 <strong>{{ 'Merchandise returns are disabled'|trans({}, 'Admin.Orderscustomers.Notification') }}</strong>
               {% endif %}
             </small>
-          </p>
+          </p> #}
           <div class="cancel-product-element refund-checkboxes-container">
             <div class="cancel-product-element form-group restock-products">
               {{ form_widget(cancelProductForm.restock) }}

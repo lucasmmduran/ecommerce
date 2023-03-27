@@ -47,10 +47,10 @@
 				<select class="form-control" id="product_rule_type_{$product_rule_group_id|intval}">
 					<option value="">{l s='-- Choose --' d='Admin.Actions'}</option>
 					<option value="products">{l s='Products' d='Admin.Global'}</option>
-					<option value="attributes">{l s='Attributes' d='Admin.Global'}</option>
+					{*<option value="attributes">{l s='Attributes' d='Admin.Global'}</option>*}
 					<option value="categories">{l s='Categories' d='Admin.Global'}</option>
-					<option value="manufacturers">{l s='Brands' d='Admin.Global'}</option>
-					<option value="suppliers">{l s='Suppliers' d='Admin.Global'}</option>
+					{*<option value="manufacturers">{l s='Brands' d='Admin.Global'}</option>*}
+					{*<option value="suppliers">{l s='Suppliers' d='Admin.Global'}</option>*}
 				</select>
 			</div>
 			<div class="col-lg-4">

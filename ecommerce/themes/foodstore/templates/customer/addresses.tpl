@@ -21,7 +21,7 @@
 {extends file='customer/page.tpl'}
 
 {block name='page_title'}
-  {l s='Your addresses' d='Shop.Theme.Catalog'}
+  {l s='Tus direcciones' d='Shop.Theme.Catalog'}
 {/block}
 
 {block name='page_content'}
