@@ -18,7 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<div class="tab-pane fade{if !$product.description} in active{/if}"
+<div class="tab-pane fade{if $product.description} in active{/if}"
      id="product-details"
      data-product="{$product.embedded_attributes|json_encode}"
   >

@@ -10373,7 +10373,7 @@ button[data-action="show-password"] {
 .search-widget form input[type="text"] {
     background: #ffffff none repeat scroll 0 0;
     border: 1px solid #f1f1f1;
-    color: #dddddd;
+    color: #979797;
     font-weight: 400;
     height: 35px;
     min-width: 252px;
