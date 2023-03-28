@@ -18,7 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<div class="featured-products clearfix home-block-section col-xs-12 col-md-4">
+<div class="featured-products clearfix home-block-section col-xs-12 col-md-12">
   <h3 class="h1 products-section-title text-uppercase title-home">
     <span>{l s='Best [1]sellers[/1]'
         sprintf=[
@@ -28,22 +28,11 @@
         d='Shop.Theme.Catalog'}
      </span>
   </h3>
-  <div class="product_group3 owl-carousel">
-    {assign var='is' value=0}
+  <div class="products product_list owl-carousel">
+    {assign var=layout_pd value=layout1}
     {foreach from=$products item="product"}
-    
-       {if $is%3 == 0}    
-            <div class="group_blog_item">
-        {/if}
-        {assign var='is' value=$is+1}
-          {include file="catalog/_partials/miniatures/product.tpl" product=$product}
-        {if $is%3 == 0}
-                            </div>
-            {/if}
-        {/foreach}
-        {if $is%3 != 0}
-            </div>
-        {/if}
+      {include file="catalog/_partials/miniatures/product.tpl" product=$product}
+    {/foreach}
   </div>
   {*<a class="all-product-link pull-xs-left pull-md-right h4" href="{$allBestSellers|escape:'html':'UTF-8'}">
     {l s='All best sellers' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
