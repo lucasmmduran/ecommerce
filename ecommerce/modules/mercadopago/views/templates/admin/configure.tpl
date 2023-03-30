@@ -45,9 +45,9 @@
             </p>
         </div>
     </div>
-    <button type="button" class="btn btn-primary" onclick="getCheckoutAnchor('tab-custom', 'a_template_1','custom_checkout')" >{l s='Go to settings' mod='mercadopago'}</button>
+    {*<button type="button" class="btn btn-primary" onclick="getCheckoutAnchor('tab-custom', 'a_template_1','custom_checkout')" >{l s='Go to settings' mod='mercadopago'}</button>*}
 </div>
-
+{*
 {if (version_compare(_PS_VERSION_, '1.7', '<'))}
     <div class="mp-card-info">
 	    <div class="mp-card-color-alert"></div>
@@ -57,25 +57,25 @@
 		    <span class="mp-card-title"><b>{l s='Attention! Mercado Pago checkout for PrestaShop version 1.6 will be disabled.' mod='mercadopago'}</b></span>
 		    <span class="mp-card-subtitle">{l s='As of the next update (4.11+), there will be no Mercado Pago checkout for PrestaShop version 1.6.' mod='mercadopago'}</span>
             <span class="mp-card-subtitle">{l s='Follow the instructions and upgrade so you don\'t stop selling.' mod='mercadopago'}</span>
-		    <a class="mp-card-button-a" target="_blank" href="https://devdocs.prestashop.com/1.7/basics/keeping-up-to-date/"><button type="button" class="mp-card-button"><b>{l s='SEE HOW TO UPGRADE' mod='mercadopago'}</b></button></a>
+		    
 	    </div>
 	    </div>
     </div>
-{/if}
+{/if}*}
 
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" role="tablist">
     <li class="active"><a href="#template_1" role="tab" data-toggle="tab" id="a_template_1">{l s='Set Up Mercado Pago' mod='mercadopago'}</a></li>
     <li><a href="#template_2" role="tab" data-toggle="tab">{l s='About Mercado Pago' mod='mercadopago'}</a></li>
-    <li><a href="#template_3" role="tab" data-toggle="tab">{l s='Plugin Log' mod='mercadopago'}</a></li>
-    <li class="mp-plugin-version"><a>{l s='Current version:' mod='mercadopago'} <span>v{$mp_version|escape:'html':'UTF-8'}</span></a></li>
+    {*<li><a href="#template_3" role="tab" data-toggle="tab">{l s='Plugin Log' mod='mercadopago'}</a></li>*}
+    {*<li class="mp-plugin-version"><a>{l s='Current version:' mod='mercadopago'} <span>v{$mp_version|escape:'html':'UTF-8'}</span></a></li>*}
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
     <div class="tab-pane active" id="template_1">{include file='./template_1.tpl'}</div>
     <div class="tab-pane" id="template_2">{include file='./template_2.tpl'}</div>
-    <div class="tab-pane" id="template_3">{include file='./template_3.tpl'}</div>
+    {*<div class="tab-pane" id="template_3">{include file='./template_3.tpl'}</div>*}
 </div>
 
 <!-- JavaScript -->

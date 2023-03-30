@@ -32,7 +32,7 @@
 
             {{ renderhook('displayAdminProductsOptionsStepTop', { 'id_product': productId }) }}
 
-            <!-- <div class="row">
+            <div class="row">
               <div class="col-md-12">
                 <h2>{{ 'Visibility'|trans({}, 'Admin.Catalog.Feature') }}</h2>
                 <p class="subtitle">{{ 'Where do you want your product to appear?'|trans({}, 'Admin.Catalog.Feature') }}</p>
@@ -56,12 +56,12 @@
                     <div class="col-md-3 js-show-price">
                       {{ form_widget(optionsForm.display_options.show_price) }}
                     </div>
-                    <div class="col-md-5">
+                    {# <div class="col-md-5">
                       {{ form_widget(optionsForm.display_options.online_only) }}
-                    </div>
+                    </div> #}
                   </div>
               </div>
-            </div> -->
+            </div>
             <div class="row form-group">
               <div class="col-md-8">
                 <label class="form-control-label">{{ 'Tags'|trans({}, 'Admin.Catalog.Feature') }}</label>
@@ -69,7 +69,7 @@
                 {{ form_widget(optionsForm.tags) }}
                 <div class="alert expandable-alert alert-info mt-3" role="alert">
                   <p class="alert-text">{{ 'Tags are meant to help your customers find your products via the search bar.'|trans({}, 'Admin.Catalog.Help')|raw }}</p>
-                  <div class="alert-more collapse" id="tagsInfo">
+                  {# <div class="alert-more collapse" id="tagsInfo">
                     <p>
                       {{ 'Choose terms and keywords that your customers will use to search for this product and make sure you are consistent with the tags you may have already used.'|trans({}, 'Admin.Catalog.Help')|raw }}<br>
                       {{ 'You can manage tag aliases in the [1]Search section[/1]. If you add new tags, you have to rebuild the index.'|trans({}, 'Admin.Catalog.Help')|
@@ -84,7 +84,7 @@
                    <button type="button" class="read-more btn-link" data-toggle="collapse" data-target="#tagsInfo" aria-expanded="false" aria-controls="collapseDanger">
                       {{ 'Read more'|trans({}, 'Admin.Actions')|raw }}
                     </button>
-                 </div>
+                 </div> #}
                 </div>
               </div>
             </div>
