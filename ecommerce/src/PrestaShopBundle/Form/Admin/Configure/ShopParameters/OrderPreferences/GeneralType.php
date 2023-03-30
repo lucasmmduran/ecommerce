@@ -120,13 +120,13 @@ class GeneralType extends TranslatorAwareType
                 'label' => $this->trans('Terms of service', 'Admin.Shopparameters.Feature'),
                 'help' => $this->trans('Require customers to accept or decline terms of service before processing an order.', 'Admin.Shopparameters.Help'),
             ])
-            ->add('tos_cms_id', ChoiceType::class, [
+            /* ->add('tos_cms_id', ChoiceType::class, [
                 'required' => false,
                 'label' => $this->trans('Page for terms and conditions', 'Admin.Shopparameters.Feature'),
                 'help' => $this->trans('Choose the page which contains your store\'s terms and conditions of use.', 'Admin.Shopparameters.Help'),
                 'placeholder' => $this->trans('None', 'Admin.Global'),
                 'choices' => $this->tosCmsChoices,
-            ]);
+            ]) */;
     }
 
     /**
