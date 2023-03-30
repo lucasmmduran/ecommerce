@@ -2081,6 +2081,13 @@ class AdminControllerCore extends Controller
             "icon" => "&#xe00c;",
             "icon-class" => "align_vertical_top"
         ]);
+        array_push($tabs,[
+            "href" => $this->context->link->getAdminLink('AdminModules', true).'&configure=mercadopago',
+            "name" => "smw-custom",
+            "title" => "Configurar Mercado Pago",
+            "icon" => "&#xf1cc;",
+            "icon-class" => "align_vertical_top"
+        ]);
         /* var_dump($tabs);
         die; */
 

@@ -32,9 +32,9 @@
                     <div class="mp-label-banner">
                         <h2 class="mp-title-banner">{l s='Take off your online sales.' mod='mercadopago'}</h2>
                         <p class="mp-text-banner">{l s='Offer your customers the best' mod='mercadopago'} <br> {l s='payment experience.' mod='mercadopago'}</p>
-                        <a href="" class="btn btn-default mp-btn-banner">
+                        {*<a href="" class="btn btn-default mp-btn-banner">
                             {l s='Configure Mercado Pago in your store' mod='mercadopago'}
-                        </a>
+                        </a>*}
                     </div>
                 </div>
             </div>
@@ -174,12 +174,12 @@
                         {l s='Offer your customers ' mod='mercadopago'} <br>
                         {l s='a unique payment experience.' mod='mercadopago'}
                     </h2>
-                    <a href="" class="btn btn-default mp-btn-footer">{l s='Configure Mercado Pago in your store' mod='mercadopago'}</a>
+                    {*<a href="" class="btn btn-default mp-btn-footer">{l s='Configure Mercado Pago in your store' mod='mercadopago'}</a>*}
                 </div>
             </div>
         </div>
 
-        <div class="mercadopago-partner">
+        {*<div class="mercadopago-partner">
             <div class="row">
                 <div class="col-md-6 mp-left-partner">
                     <img class="img-fluid mp-img-partner" src="{$module_dir|escape:'html':'UTF-8'}views/img/partner.png" />
@@ -190,6 +190,6 @@
                     <a href="{$seller_protect_link|escape:'html':'UTF-8'}" target="_blank" class="mp-fl-right">{l s='Seller Protection Program.' mod='mercadopago'}</a>
                 </div>
             </div>
-        </div>
+        </div>*}
 	</div>
 </div>
