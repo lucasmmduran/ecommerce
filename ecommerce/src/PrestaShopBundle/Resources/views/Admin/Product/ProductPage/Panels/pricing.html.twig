@@ -81,12 +81,12 @@
                 {{ form_errors(pricingForm.id_tax_rules_group) }}
                 {{ form_widget(pricingForm.id_tax_rules_group) }}
               </div>
-              <div class="col-md-8">
+              {# <div class="col-md-8">
                 <label class="form-control-label">&nbsp;</label>
                 <a class="form-control-static external-link" href="{{ getAdminLink("AdminTaxes") }}" target="_blank">
                   {{ 'Manage tax rules'|trans({}, 'Admin.Catalog.Feature') }}
                 </a>
-              </div>
+              </div> #}
               <div class="col-md-12 pt-1">
                 {{ form_widget(pricingForm.on_sale) }}
               </div>
@@ -104,7 +104,7 @@
             </div>
           </div>
 
-          <div class="col-md-12">
+          {# <div class="col-md-12">
             <div class="row mb-3">
               <div class="col-md-12">
                 <h2>
@@ -119,9 +119,9 @@
                 {{ form_widget(pricingForm.wholesale_price) }}
               </div>
             </div>
-          </div>
+          </div> #}
 
-          <div class="col-md-12">
+          {# <div class="col-md-12">
             <div class="row mb-3">
               <div class="col-md-12">
                 <h2>
@@ -167,14 +167,14 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> #}
 
           <div>
             {{ include('@Product/ProductPage/Forms/form_edit_specific_price_modal.html.twig') }}
           </div>
 
 
-          <div class="col-md-12">
+          {# <div class="col-md-12">
             <div class="row">
               <div class="col-md-12">
                 <h2>
@@ -215,7 +215,7 @@
                 {{ form_widget(pricingForm.specificPricePriorityToAll) }}
               </div>
             </div>
-          </div>
+          </div> #}
 
           {{ renderhook('displayAdminProductsPriceStepBottom', { 'id_product': productId }) }}
 
