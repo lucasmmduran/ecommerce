@@ -219,6 +219,7 @@ abstract class PaymentModuleCore extends Module
         $secure_key = false,
         Shop $shop = null
     ) {
+        
         if (self::DEBUG_MODE) {
             PrestaShopLogger::addLog('PaymentModule::validateOrder - Function called', 1, null, 'Cart', (int) $id_cart, true);
         }
@@ -264,6 +265,8 @@ abstract class PaymentModuleCore extends Module
             $package_list = $this->context->cart->getPackageList();
             $cart_delivery_option = $this->context->cart->getDeliveryOption();
 
+            
+
             // If some delivery options are not defined, or not valid, use the first valid option
             foreach ($delivery_option_list as $id_address => $package) {
                 if (!isset($cart_delivery_option[$id_address]) || !array_key_exists($cart_delivery_option[$id_address], $package)) {
@@ -274,13 +277,16 @@ abstract class PaymentModuleCore extends Module
                     }
                 }
             }
-
+            
             $order_list = [];
             $order_detail_list = [];
 
             do {
                 $reference = Order::generateReference();
             } while (Order::getByReference($reference)->count());
+
+            
+
 
             $this->currentOrderReference = $reference;
 
@@ -298,6 +304,7 @@ abstract class PaymentModuleCore extends Module
                     }
                 }
             }
+            
             // Make sure CartRule caches are empty
             CartRule::cleanCache();
             $cart_rules = $this->context->cart->getCartRules();
@@ -328,6 +335,8 @@ abstract class PaymentModuleCore extends Module
 
             foreach ($package_list as $id_address => $packageByAddress) {
                 foreach ($packageByAddress as $id_package => $package) {
+                    //var_dump($cart_delivery_option);
+                    
                     $orderData = $this->createOrderFromCart(
                         $this->context->cart,
                         $this->context->currency,

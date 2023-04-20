@@ -43,6 +43,7 @@ class OrderConfirmationControllerCore extends FrontController
      */
     public function init()
     {
+        
         parent::init();
 
         if (true === (bool) Tools::getValue('free_order')) {
@@ -79,6 +80,8 @@ class OrderConfirmationControllerCore extends FrontController
      */
     public function initContent()
     {
+        /* var_dump("initContent()");
+        die; */
         if (Configuration::isCatalogMode()) {
             Tools::redirect('index.php');
         }
@@ -111,6 +114,8 @@ class OrderConfirmationControllerCore extends FrontController
      */
     public function displayPaymentReturn($order)
     {
+        /* var_dump("displayPaymentReturn()");
+        die; */
         if (!Validate::isUnsignedId($this->id_module)) {
             return false;
         }
@@ -123,6 +128,8 @@ class OrderConfirmationControllerCore extends FrontController
      */
     public function displayOrderConfirmation($order)
     {
+        /* var_dump("displayOrderConfirmation()");
+        die; */
         return Hook::exec('displayOrderConfirmation', ['order' => $order]);
     }
 
@@ -131,6 +138,8 @@ class OrderConfirmationControllerCore extends FrontController
      */
     protected function checkFreeOrder()
     {
+        /* var_dump("checkFreeOrder()");
+        die; */
         $cart = $this->context->cart;
         if ($cart->id_customer == 0 || $cart->id_address_delivery == 0 || $cart->id_address_invoice == 0) {
             Tools::redirect($this->context->link->getPageLink('order'));

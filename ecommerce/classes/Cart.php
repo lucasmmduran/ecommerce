@@ -2845,6 +2845,7 @@ die; */
      */
     public function getDeliveryOptionList(Country $default_country = null, $flush = false)
     {
+
         if (isset(static::$cacheDeliveryOptionList[$this->id]) && !$flush) {
             return static::$cacheDeliveryOptionList[$this->id];
         }
@@ -2853,11 +2854,10 @@ die; */
         $carriers_price = [];
         $carrier_collection = [];
         $package_list = $this->getPackageList($flush);
-        
-        
 
         // Foreach addresses
         foreach ($package_list as $id_address => $packages) {
+            
             // Initialize vars
             $delivery_option_list[$id_address] = [];
             $carriers_price[$id_address] = [];
@@ -2874,29 +2874,34 @@ die; */
                 $country = $default_country;
             }
             
+
             // Foreach packages, get the carriers with best price, best position and best grade
             foreach ($packages as $id_package => $package) {
                 // No carriers available
-                
-                if (count($packages) == 1 && count($package['carrier_list']) == 1 && current($package['carrier_list']) == 0) {
+                $carriers_price[$id_address][$id_package] = [];
+
+
+                /* if (count($packages) == 1 && count($package['carrier_list']) == 1 && current($package['carrier_list']) == 0) {
                     $cache[$this->id] = [];
 
                     return $cache[$this->id];
-                }
-
-                $carriers_price[$id_address][$id_package] = [];
-
+                } */
+                $package['carrier_list'] = $package_list['carrier_list'];
+                
+                
                 // Get all common carriers for each packages to the same address
                 if (null === $common_carriers) {
-                        if(!isset($package['carrier_list'])){
+                        /* if(!isset($package['carrier_list'])){
+                            
                             return;
-                        }
+                        } */
 
                     $common_carriers = $package['carrier_list'];
                 } else {
                     $common_carriers = array_intersect($common_carriers, $package['carrier_list']);
                 }
-
+                
+                
                 $best_price = null;
                 $best_price_carrier = null;
                 $best_grade = null;
@@ -2935,26 +2940,31 @@ die; */
             $key = '';
 
             // Get the delivery option with the lower price
+            
             foreach ($best_price_carriers as $id_package => $id_carrier) {
-                $key .= $id_carrier . ',';
-                if (!isset($best_price_carrier[$id_carrier])) {
-                    $best_price_carrier[$id_carrier] = [
+                $carrierId = $id_carrier['id_carrier'];
+        
+                $key .= $carrierId . ',';
+                if (!isset($best_price_carrier[$carrierId])) {
+                    $best_price_carrier[$carrierId] = [
                         'price_with_tax' => 0,
                         'price_without_tax' => 0,
                         'package_list' => [],
                         'product_list' => [],
                     ];
                 }
-                $best_price_carrier[$id_carrier]['price_with_tax'] += $carriers_price[$id_address][$id_package][$id_carrier]['with_tax'];
-                $best_price_carrier[$id_carrier]['price_without_tax'] += $carriers_price[$id_address][$id_package][$id_carrier]['without_tax'];
-                $best_price_carrier[$id_carrier]['package_list'][] = $id_package;
-                $best_price_carrier[$id_carrier]['product_list'] = array_merge($best_price_carrier[$id_carrier]['product_list'], $packages[$id_package]['product_list']);
-                $best_price_carrier[$id_carrier]['instance'] = $carriers_instance[$id_carrier];
-                $real_best_price = !isset($real_best_price) || $real_best_price > $carriers_price[$id_address][$id_package][$id_carrier]['with_tax'] ?
-                    $carriers_price[$id_address][$id_package][$id_carrier]['with_tax'] : $real_best_price;
-                $real_best_price_wt = !isset($real_best_price_wt) || $real_best_price_wt > $carriers_price[$id_address][$id_package][$id_carrier]['without_tax'] ?
-                    $carriers_price[$id_address][$id_package][$id_carrier]['without_tax'] : $real_best_price_wt;
+                $best_price_carrier[$carrierId]['price_with_tax'] += $carriers_price[$id_address][$id_package][$carrierId]['with_tax'];
+                $best_price_carrier[$carrierId]['price_without_tax'] += $carriers_price[$id_address][$id_package][$carrierId]['without_tax'];
+                $best_price_carrier[$carrierId]['package_list'][] = $id_package;
+                $best_price_carrier[$carrierId]['product_list'] = array_merge($best_price_carrier[$carrierId]['product_list'], $packages[$id_package]['product_list']);
+                $best_price_carrier[$carrierId]['instance'] = $carriers_instance[$carrierId];
+                $real_best_price = !isset($real_best_price) || $real_best_price > $carriers_price[$id_address][$id_package][$carrierId]['with_tax'] ?
+                    $carriers_price[$id_address][$id_package][$carrierId]['with_tax'] : $real_best_price;
+                $real_best_price_wt = !isset($real_best_price_wt) || $real_best_price_wt > $carriers_price[$id_address][$id_package][$carrierId]['without_tax'] ?
+                    $carriers_price[$id_address][$id_package][$carrierId]['without_tax'] : $real_best_price_wt;
             }
+
+            
 
             // Add the delivery option with best price as best price
             $delivery_option_list[$id_address][$key] = [
@@ -2963,6 +2973,7 @@ die; */
                 'is_best_grade' => false,
                 'unique_carrier' => (count($best_price_carrier) <= 1),
             ];
+            
 
             // Reset $best_grade_carrier, it's now an array
             $best_grade_carrier = [];
@@ -3033,8 +3044,10 @@ die; */
             }
         }
 
-        $cart_rules = CartRule::getCustomerCartRules(Context::getContext()->cookie->id_lang, Context::getContext()->cookie->id_customer, true, true, false, $this, true);
+        
 
+        $cart_rules = CartRule::getCustomerCartRules(Context::getContext()->cookie->id_lang, Context::getContext()->cookie->id_customer, true, true, false, $this, true);
+        
         $result = false;
         if ($this->id) {
             $result = Db::getInstance()->executeS('SELECT * FROM ' . _DB_PREFIX_ . 'cart_cart_rule WHERE id_cart = ' . (int) $this->id);
@@ -3407,9 +3420,10 @@ die; */
         if (isset(static::$cacheDeliveryOption[$cache_id]) && $use_cache) {
             return static::$cacheDeliveryOption[$cache_id];
         }
-
+        $default_country = new Country(44);
+        
         $delivery_option_list = $this->getDeliveryOptionList($default_country);
-
+        
         // The delivery option was selected
         if (isset($this->delivery_option) && $this->delivery_option != '') {
             $delivery_option = json_decode($this->delivery_option, true);

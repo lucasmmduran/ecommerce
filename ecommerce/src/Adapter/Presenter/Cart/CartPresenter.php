@@ -317,6 +317,7 @@ class CartPresenter implements PresenterInterface
      */
     public function present($cart, $shouldSeparateGifts = false)
     {
+        
         if (!is_a($cart, 'Cart')) {
             throw new \Exception('CartPresenter can only present instance of Cart');
         }
@@ -375,12 +376,16 @@ class CartPresenter implements PresenterInterface
         } else {
             $shippingCost = 0;
         }
+        
         $subtotals['shipping'] = [
             'type' => 'shipping',
             'label' => $this->translator->trans('Shipping', [], 'Shop.Theme.Checkout'),
             'amount' => $shippingCost,
             'value' => $this->getShippingDisplayValue($cart, $shippingCost),
         ];
+
+        /* var_dump($subtotals['shipping'] );
+        die; */
 
         $subtotals['tax'] = null;
         if (Configuration::get('PS_TAX_DISPLAY')) {
@@ -525,11 +530,17 @@ class CartPresenter implements PresenterInterface
                 $defaultCountry = new Country(Context::getContext()->cookie->id_country);
             }
 
+            $defaultCountry = new Country(44);
+
+
             $deliveryOptionList = $cart->getDeliveryOptionList($defaultCountry);
+            /* var_dump($deliveryOptionList);
+            die; */
 
             if (count($deliveryOptionList) > 0) {
                 foreach ($deliveryOptionList as $option) {
                     foreach ($option as $currentCarrier) {
+                        
                         if (isset($currentCarrier['is_free']) && $currentCarrier['is_free'] > 0) {
                             $shippingDisplayValue = $this->translator->trans('Free', [], 'Shop.Theme.Checkout');
                             break 2;
