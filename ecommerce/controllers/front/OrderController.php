@@ -57,7 +57,7 @@ class OrderControllerCore extends FrontController
      *
      * @var bool
      */
-    protected $automaticallyAllocateDeliveryAddress = true;
+    protected $automaticallyAllocateDeliveryAddress = false;
 
     /**
      * Initialize order controller.
@@ -72,10 +72,12 @@ class OrderControllerCore extends FrontController
 
     public function postProcess()
     {
-        
         parent::postProcess();
 
-        if (Tools::isSubmit('submitReorder') && $this->context->customer->isLogged() && $id_order = (int) Tools::getValue('id_order')) {
+        if (Tools::isSubmit('submitReorder')
+            && $this->context->customer->isLogged()
+            && $id_order = (int) Tools::getValue('id_order')
+        ) {
             $oldCart = new Cart(Order::getCartIdStatic($id_order, $this->context->customer->id));
             $duplication = $oldCart->duplicate();
             if (!$duplication || !Validate::isLoadedObject($duplication['cart'])) {
@@ -146,8 +148,6 @@ class OrderControllerCore extends FrontController
         $data = $process->getDataToPersist();
         $cart = $this->context->cart;
 
-        
-
         $data['checksum'] = $this->cartChecksum->generateChecksum($cart);
 
         Db::getInstance()->execute(
@@ -203,14 +203,10 @@ class OrderControllerCore extends FrontController
 
     public function displayAjaxselectDeliveryOption()
     {
-        /* var_dump($this->context->cart);
-        die; */
         $cart = $this->cart_presenter->present(
             $this->context->cart,
             true
         );
-        /* var_dump($cart);
-        die; */
 
         ob_end_clean();
         header('Content-Type: application/json');

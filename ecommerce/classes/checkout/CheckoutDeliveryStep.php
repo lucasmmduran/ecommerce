@@ -122,22 +122,6 @@ class CheckoutDeliveryStepCore extends AbstractCheckoutStep
 
     public function handleRequest(array $requestParams = [])
     {
-        if(isset($requestParams['confirmDeliveryOption'])){
-            $deliveryOptions = $this->getCheckoutSession()->getDeliveryOptions();//Carrier::getCarriers(1);
-            //var_dump($this->getCheckoutSession()->getSelectedDeliveryOption());
-            //die;
-            $this->setNextStepAsCurrent();
-            $this->setComplete(true);
-
-            $this->setTitle($this->getTranslator()->trans('Shipping Method', [], 'Shop.Theme.Checkout'));
-
-            Hook::exec('actionCarrierProcess', ['cart' => $this->getCheckoutSession()->getCart()]);
-            return;
-        }
-        
-
-
-
         if (isset($requestParams['delivery_option'])) {
             $this->setComplete(false);
             $this->getCheckoutSession()->setDeliveryOption(
@@ -181,11 +165,6 @@ class CheckoutDeliveryStepCore extends AbstractCheckoutStep
 
     public function render(array $extraParams = [])
     {
-        $carrier = Carrier::getCarriers(1, true);
-        /* var_dump($this->getCheckoutSession()->getDeliveryOptions(),$carrier);
-        die; */
-        //var_dump($this->getCheckoutSession()->getMessage());
-        //die;
         return $this->renderTemplate(
             $this->getTemplate(),
             $extraParams,
@@ -193,7 +172,7 @@ class CheckoutDeliveryStepCore extends AbstractCheckoutStep
                 'hookDisplayBeforeCarrier' => Hook::exec('displayBeforeCarrier', ['cart' => $this->getCheckoutSession()->getCart()]),
                 'hookDisplayAfterCarrier' => Hook::exec('displayAfterCarrier', ['cart' => $this->getCheckoutSession()->getCart()]),
                 'id_address' => $this->getCheckoutSession()->getIdAddressDelivery(),
-                'delivery_options' => $carrier,//$this->getCheckoutSession()->getDeliveryOptions(),
+                'delivery_options' => $this->getCheckoutSession()->getDeliveryOptions(),
                 'delivery_option' => $this->getCheckoutSession()->getSelectedDeliveryOption(),
                 'recyclable' => $this->getCheckoutSession()->isRecyclable(),
                 'recyclablePackAllowed' => $this->isRecyclablePackAllowed(),
