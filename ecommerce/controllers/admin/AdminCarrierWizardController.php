@@ -75,9 +75,9 @@ class AdminCarrierWizardControllerCore extends AdminController
                  [
                     'title' => $this->trans('Shipping locations and costs', [], 'Admin.Shipping.Feature'),
                 ],
-                /* [
+                [
                     'title' => $this->trans('Size, weight, and group access', [], 'Admin.Shipping.Feature'),
-                ], */
+                ],
                 [
                     'title' => $this->trans('Summary', [], 'Admin.Global'),
                 ], ],
@@ -123,8 +123,8 @@ class AdminCarrierWizardControllerCore extends AdminController
                 'contents' => [
                     0 => $this->renderStepOne($carrier),
                     1 => $this->renderStepThree($carrier),
-                    /* 2 => $this->renderStepFour($carrier), */
-                    2 => $this->renderStepFive($carrier),
+                    2 => $this->renderStepFour($carrier),
+                    3 => $this->renderStepFive($carrier),
                 ],
             ],
             'labels' => [

@@ -182,6 +182,8 @@ class CheckoutDeliveryStepCore extends AbstractCheckoutStep
     public function render(array $extraParams = [])
     {
         $carrier = Carrier::getCarriers(1, true);
+        /* var_dump($this->getCheckoutSession()->getDeliveryOptions(),$carrier);
+        die; */
         //var_dump($this->getCheckoutSession()->getMessage());
         //die;
         return $this->renderTemplate(

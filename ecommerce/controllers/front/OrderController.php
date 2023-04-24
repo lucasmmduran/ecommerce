@@ -203,12 +203,14 @@ class OrderControllerCore extends FrontController
 
     public function displayAjaxselectDeliveryOption()
     {
-        
+        /* var_dump($this->context->cart);
+        die; */
         $cart = $this->cart_presenter->present(
             $this->context->cart,
             true
         );
-        
+        /* var_dump($cart);
+        die; */
 
         ob_end_clean();
         header('Content-Type: application/json');

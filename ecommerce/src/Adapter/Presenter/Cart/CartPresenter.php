@@ -370,12 +370,14 @@ class CartPresenter implements PresenterInterface
                     : $this->translator->trans('Free', [], 'Shop.Theme.Checkout'),
             ];
         }
-
+        
         if (!$cart->isVirtualCart()) {
             $shippingCost = $cart->getTotalShippingCost(null, $this->includeTaxes());
         } else {
             $shippingCost = 0;
         }
+        /* var_dump($shippingCost);
+        die; */
         
         $subtotals['shipping'] = [
             'type' => 'shipping',
