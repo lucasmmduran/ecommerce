@@ -101,21 +101,31 @@
             <div class="back panel">
                 <h4 id="forgot_name">{l s='Forgot your password?' d='Admin.Global'}</h4>
                 <form action="#" id="forgot_password_form" method="post">
-                    <div class="form-group">
+                    <div class="form-group"> 
                         <label class="control-label" for="email_forgot">
                             {l s='Email address' d='Admin.Global'}
                         </label>
                         <input type="text" name="email_forgot" id="email_forgot" class="form-control" autofocus="autofocus" tabindex="5" placeholder="&#xf0e0 test@example.com" />
                     </div>
                     <div class="panel-footer">
-                        <button type="button" href="#" class="btn btn-default show-login-form" tabindex="7">
-                            <i class="icon-caret-left"></i>
-                            {l s='Cancel' d='Admin.Actions'}
-                        </button>
-                        <button id="reset-password-button" class="btn btn-primary btn-default pull-right" name="submitLogin" type="submit" tabindex="6">
-                            <i class="icon-ok text-success"></i>
-                            {l s='Send reset link' d='Admin.Login.Feature'}
-                        </button>
+                      <button type="button" href="#" class="btn btn-default show-login-form" tabindex="4">
+                          <i class="icon-caret-left"></i>
+                          {l s='Cancel' d='Admin.Actions'}
+                      </button>
+                      <button id="reset-password-button" class="btn btn-primary btn-lg btn-block ladda-button" name="submitLogin" type="submit" tabindex="4">
+                              <i class="icon-ok text-success"></i>
+                              {l s='Send reset link' d='Admin.Login.Feature'}
+                          </button>
+                      <div class="row">
+                        <div class="col-6">
+                          
+                        </div>
+                        <div class="col-6">
+                          
+                        </div>
+                      </div>
+                        
+                        
                     </div>
                 </form>
             </div>
