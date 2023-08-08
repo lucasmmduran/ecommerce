@@ -4,7 +4,6 @@ bower_components/
 node_modules/
 /ecommerce/cache
 /ecommerce/composer.lock
-/ecommerce/var/cache
 /ecommerce/var/logs
 /ecommerce/var/sessions
 /ecommerce/install

@@ -1,0 +1,25 @@
+<?php return array (
+  'parameters' => 
+  array (
+    'database_host' => '127.0.0.1',
+    'database_port' => '',
+    'database_name' => 'smartway_tienda',
+    'database_user' => 'root',
+    'database_password' => '',
+    'database_prefix' => 'ps_',
+    'database_engine' => 'InnoDB',
+    'mailer_transport' => 'smtp',
+    'mailer_host' => '127.0.0.1',
+    'mailer_user' => NULL,
+    'mailer_password' => NULL,
+    'secret' => 'VXJAOPTICubCp52xXbaErkGEagURa40A404WybLXhi4jTMqARsvuTushgRUWedqE',
+    'ps_caching' => 'CacheMemcache',
+    'ps_cache_enable' => false,
+    'ps_creation_date' => '2023-01-11',
+    'locale' => 'es-ES',
+    'use_debug_toolbar' => true,
+    'cookie_key' => 'yZVUK3rw9776oHaDbXxBoMLc83LHVdo7ExkCy10P5OsZ3jKdrSBtw9t5svy22iux',
+    'cookie_iv' => 'J6eOw9ooozLqM0BULCuhhG8djGAUEaNW',
+    'new_cookie_key' => 'def0000085f4464480adce3da49b38930431df22ac1e31745fe1a8c0905e0c8dc6f50471d739e227c2a0f5af01fb9d38c5dbad0a741860b2f2eb267ae37087daa714d68f',
+  ),
+);
