@@ -3,11 +3,9 @@
 bower_components/
 node_modules/
 /ecommerce/cache
-/ecommerce/vendor
 /ecommerce/composer.lock
 /ecommerce/var/cache
 /ecommerce/var/logs
 /ecommerce/var/sessions
-/ecommerce/app/config/parameters.php
 /ecommerce/install
 /.docker/phpmyadmin/config.inc.php
